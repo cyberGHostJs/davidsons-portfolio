@@ -1,0 +1,627 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Gothic+A1:wght@100&family=IBM+Plex+Sans:wght@100&family=Libre+Baskerville&family=Montserrat&family=Open+Sans:wght@700&display=swap");
+
+/* Utils - TopNavigationContainer  */
+.TopNavigationContainer {
+  flex: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nameLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.nameLogo h5 {
+  margin: 0 !important;
+  margin-left: 10% !important;
+  cursor: pointer;
+  color: #607b96;
+  font-family: "Fira Code";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  height: fit-content;
+  width: fit-content;
+  white-space: nowrap;
+}
+.menuBtnn {
+  display: none;
+}
+.mainNavMenuContainer {
+  display: flex;
+  padding: 0 !important;
+}
+.mainNavMenu {
+  list-style: none;
+  display: flex;
+  flex: 1 !important;
+  height: 100%;
+  border-right: 1px solid #1e2d3d;
+}
+.mainNavMenu li {
+  border-left: 1px solid #1e2d3d;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #607b96;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.mainNavMenu li:hover {
+  color: white;
+}
+.active {
+  color: white !important;
+}
+
+.contactMe {
+  border-left: 1px solid #1e2d3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.contactMe div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactMe h5 {
+  color: #607b96;
+  text-align: right;
+  font-family: "Fira Code";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  flex: 1 !important;
+  margin: 0 !important;
+  transition: 0.5s;
+}
+.contactMe h5:hover {
+  color: white;
+}
+
+/* Utils ----BODY--  */
+.body-row {
+  flex: 1;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.body-col {
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* --- HeroInfo  */
+.info {
+  margin-right: 2.5%;
+  width: 75%;
+}
+.info h5 {
+  font-family: "Fira Code";
+  color: #e5e9f0;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.info h1 {
+  font-family: "Fira Code";
+  color: #e5e9f0;
+  /* font-size: 62px; */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.info h4 {
+  color: #4d5bce;
+  font-family: "Fira Code";
+  /* font-size: 32px; */
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.info .comment {
+  color: #607b96;
+  font-family: Fira Code;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+
+.mrgTop {
+  /* margin-top: 81px; */
+  margin-top: 13%;
+}
+
+.gitHubLinkCover {
+  /* border: 1px solid pink; */
+  font-family: "Fira Code";
+  font-weight: 500;
+
+}
+.const {
+  color: #4d5bce;
+  /* font-family: "Fira Code"; */
+  /* font-size: 16px; */
+  /* font-style: normal;
+  font-weight: 500;
+  line-height: normal; */
+}
+.github {
+  color: #43d9ad;
+  /* font-family: "Fira Code"; */
+  /* font-size: 16px; */
+  /* font-style: normal;
+  font-weight: 500;
+  line-height: normal; */
+}
+.link {
+  color: #e99287;
+  cursor: pointer;
+  margin-left: 2%;
+  /* font-family: "Fira Code"; */
+  /* font-size: 16px;  */
+  /* font-style: normal; */
+  /* font-weight: 500; */
+  /* line-height: normal; */
+  /* text-decoration-line: underline; */
+  border-bottom: 1px solid  #e99287;
+  transition: 0.5s;
+}
+.link:hover {
+  opacity: 0.6;
+}
+/*--- Blured bg--- */
+.bg_cl1 {
+  position: absolute;
+  color: white;
+  width: 30%;
+  height: 75%;
+  transform: rotate(-102.305deg);
+  fill: #43d9ad;
+  background: #43d9ad;
+  opacity: 0.4;
+  filter: blur(87px);
+  top: 2%;
+  left: 46%;
+}
+.bg_cl2 {
+  width: 35%;
+  height: 70%;
+  transform: rotate(13.508deg);
+  flex-shrink: 0;
+  fill: #4d5bce;
+  background: #4d5bce;
+  opacity: 0.4;
+  filter: blur(87px);
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+.game_cover {
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  /* width: 510px; */
+  /* height: 475px; */
+  /* width: 85%; */
+  margin-left: 2.5%;
+  width: 75%;
+  height: 80%;
+  border-radius: 8px;
+  border: 1px solid #0c1616;
+  background: linear-gradient(
+    150deg,
+    rgba(23, 85, 83, 0.7) 1.7%,
+    rgba(67, 217, 173, 0.09) 81.82%
+  );
+  box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.3) inset;
+  backdrop-filter: blur(32px);
+}
+.game {
+  position: relative;
+  flex: 1;
+  border-radius: 8px;
+  background: rgba(1, 22, 39, 0.84);
+  box-shadow: 1px 5px 11px 0px rgba(2, 18, 27, 0.71) inset;
+}
+.game button {
+  position: absolute;
+  top: 0%;
+  border: none;
+  font-family: "Fira Code";
+  font-size: 14px;
+
+  display: flex;
+  /* padding: 10px 14px; */
+  padding: 5% 7%;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  border-radius: 8px;
+  background: #fea55f;
+  color: #01080e;
+  white-space: nowrap;
+
+  top: 80%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the button precisely */
+}
+.game-params {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.skipBtn {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  display: inline-flex;
+  /* padding: 10px 14px; */
+  padding: 5% 7%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background: none;
+
+  color: #fff;
+  text-align: right;
+  font-family: "Fira Code";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.game-params p {
+  /* width: 80%;
+  text-align: left; */
+  width: 134.461px;
+  color: #fff;
+  font-family: "Fira Code";
+  /* font-size: 14px; */
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-top: 20px;
+}
+.game-instructioin {
+  /* width: 181.382px; */
+  /* width: 90%; */
+  width: fit-content;
+  padding: 5%;
+  height: 142px;
+  border-radius: 8px;
+  background: rgba(1, 20, 35, 0.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-instructioin p {
+  height: fit-content;
+  width: fit-content;
+  /* white-space: nowrap; */
+  /* margin: 2% auto; */
+  margin: 0 !important;
+  color: #fff;
+  font-family: "Fira Code";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+.up {
+  /* border: 1px solid green; */
+  width: 39.079px;
+  height: 28.691px;
+  flex-shrink: 0;
+  margin: 3.5px;
+  cursor: pointer;
+}
+.arrowsContainer {
+  display: flex;
+}
+.snakeFeed {
+  width: 150.5px;
+  height: fit-content;
+  /* max-width: fit-content; */
+}
+.circle {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(67, 217, 173, 1) 25%,
+    rgba(67, 217, 173, 0.1) 50%,
+    rgba(67, 217, 173, 0.2) 75%
+  );
+  margin: 4%;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+/*--- BottomNavigation--- */
+.BottomNavigationContainer {
+  flex: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.BottomNavigationContainerCol {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+}
+.footerSectOne {
+  display: flex;
+  flex: 1 !important;
+  justify-content: center;
+  align-items: center;
+}
+.footerSectOneTextCover {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-right: 7%;
+  border-right: 1px solid #1e2d3d;
+}
+.footerSectOneTextCover h5 {
+  height: fit-content;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.socialLogoContainer {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  border-right: 1px solid #1e2d3d;
+}
+.BottomNavigationContainerCol2 {
+  display: flex;
+  padding: 0 !important;
+}
+.BottomNavigationContainerCol2 div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #1e2d3d;
+}
+.BottomNavigationContainerCol2 h5 {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.BottomNavigationContainerCol2 img {
+  margin-left: 4.98px;
+  width: 24px;
+  height: 24px;
+}
+
+/*-==== extras-------- */
+.relative {
+  position: relative;
+}
+.findMe {
+  color: #607b96;
+  font-family: "Fira Code";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+}
+
+.img {
+  transition: 0.5s;
+}
+.img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.right {
+  justify-content: right;
+}
+.left {
+  text-align: left;
+}
+
+/*--- Blured bg--- */
+.bg2_cl1 {
+  display: none;
+  position: absolute;
+  color: white;
+  width: 35%;
+  height: 35%;
+  transform: rotate(-102.305deg);
+  fill: #43d9ad;
+  background: #43d9ad;
+  opacity: 0.4;
+  filter: blur(87px);
+  top: 10%;
+  left: 25%;
+}
+.bg2_cl2 {
+  display: none;
+  width: 35%;
+  height: 70%;
+  transform: rotate(13.508deg);
+  flex-shrink: 0;
+  fill: #4d5bce;
+  background: #4d5bce;
+  opacity: 0.4;
+  filter: blur(87px);
+  position: absolute;
+  bottom: 2%;
+  right: 20%;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .game_cover {
+    width: 85%;
+    height: 75%;
+  }
+}
+@media screen and (max-width: 949px) {
+  .menuBtnn img {
+    width: 25px;
+  }
+  .menuBtnn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+  }
+  .nameLogo {
+    /* border: 1px solid black; */
+    flex: 1;
+    justify-content: left;
+    align-items: center;
+  }
+  .mainNavMenuContainer,
+  .contactMe {
+    display: none;
+  }
+  .displaySCreen {
+    display: none;
+  }
+  .bg2_cl1 {
+    display: block;
+  }
+  .bg2_cl2 {
+    display: block;
+  }
+  .mdMarginTop{
+    margin-top: 20%;
+  }
+  .info h4{
+    color: #43d9ad ;
+  }
+}
+@media screen and (max-width: 767px) {
+  .info {
+    margin: 0% auto !important;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mdMarginTop{
+    margin-top: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info h4{
+    font-size: 20px;
+  }
+  .info h1{
+    font-size: 42px;
+  }
+  .info h5{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .link {
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+}
+
+/* .game-board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 1px;
+  border: 1px solid #ccc;
+  width: 400px;
+  height: 400px;
+} */
+
+/* .cell {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+} */
+
+/* .snake {
+  width: 100%;
+  height: 100%;
+  background: #43d9ad;
+  mask: linear-gradient(
+    to right,
+    transparent 90%,
+    #fff 100%
+  ); 
+  background-clip: text;
+  -webkit-mask-composite: source-out;
+  mask-composite: exclude;
+  animation: grow 0.5s ease; 
+}
+
+.snake.growing {
+  animation: grow 0.5s ease; 
+}
+
+@keyframes grow {
+  0% {
+    background-size: 10px 100%;
+  }
+  100% {
+    background-size: 100% 100%; 
+  }
+}
+
+.food {
+  background-color: #e74c3c;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+p {
+  font-size: 24px;
+  color: #e74c3c;
+  font-weight: bold;
+} */
+
+.fix {
+  padding: 0 !important;
+}
+.red {
+  border: 1px solid red !important;
+}

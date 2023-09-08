@@ -406,7 +406,7 @@ export const BottomNavigation = () => {
 // FindMeSocial
 const FindMeSocial = () => {
   return (
-    <Col md={{ span: "3" }} className="BottomNavigationContainerCol">
+    <Col md={{ span: "4" }} className="BottomNavigationContainerCol">
       <div className="footerSectOne">
         <div className="footerSectOneTextCover">
           <h5 className="findMe">find me in:</h5>
@@ -438,11 +438,11 @@ const FindMeSocial = () => {
 const GithubUserName = () => {
   return (
     <Col
-      md={{ span: "", offset: "7" }}
+      md={{ span: "", offset: "5" }}
       className="BottomNavigationContainerCol2"
     >
       <div className="">
-        <h5 className="findMe">@cyberGHostJs</h5>
+        <h5 className="findMe ">@cyberGHostJs</h5>
         <img src={github} alt={github} className="img" />
       </div>
     </Col>

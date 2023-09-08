@@ -35,6 +35,8 @@
   display: flex;
   padding: 0 !important;
   white-space: nowrap;
+  /* border: 1px solid green; */
+  margin-left: 4%;
 }
 .mainNavMenu {
   list-style: none;
@@ -73,6 +75,7 @@
   padding: 0 !important;
   width: 13%;
   /* border: 1px solid green !important; */
+  margin-left: 29%;
 }
 
 .contactMe div {

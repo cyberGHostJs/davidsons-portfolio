@@ -286,7 +286,7 @@ const HeroInfo = () => {
       <p className="gitHubLinkCover">
         <span className="const">const</span>
         <span className="github"> githubLink</span> =
-        <span className="link">“https://github.com/example/url”</span>
+        <span className="link">“https://github.com/cyberGHostJs”</span>
       </p>
     </div>
   );

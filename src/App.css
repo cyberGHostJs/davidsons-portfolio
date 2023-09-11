@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+/* styles.css */
+.black-background {
+  background-color: black !important; /* Use !important to override any conflicting styles */
+  font-size: 14px !important;
+  margin: 0 !important;
+  border-radius: 15px !important;
+}
+
+/* styles.css */
+.black-background {
+  background-color: black !important;
+  height: 100% !important;
+}
+
+/* Container for horizontal scrolling */
+.code-container {
+  flex: 1;
+  width: 100%;
+  max-width: 100%; /* Set a max-width to control the maximum width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks within code */
+}

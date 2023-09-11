@@ -194,7 +194,7 @@ export const TopNavigation = ({ setSelectedOption, selectedOption }) => {
 const LogoAndMenuIcon = () => {
   return (
     <>
-      <Col className=" nameLogo" md="2">
+      <Col className=" nameLogo" md={{ span: "3", offset: ''}}>
         <h5>Davidson Onyebuchi</h5>
       </Col>
       {/* the menuIcon only displays in small screen */}
@@ -208,8 +208,8 @@ const LogoAndMenuIcon = () => {
 // NavItems
 const NavItems = ({ selectedOption, setSelectedOption }) => {
   return (
-    <Col className="mainNavMenuContainer" md={{ span: "4", offset: "1" }}>
-      <ul className="mainNavMenu">
+    <Col className="mainNavMenuContainer " md={{ span: "4", offset: "" }}>
+      <ul className="mainNavMenu ">
         {navItems.map((dashboardMenu) => (
           <li
             className={` ${
@@ -277,10 +277,14 @@ const HeroInfo = () => {
   return (
     <div className="info left ">
       <h5>Hi, I am</h5>
-      <h1><span className="displaySCreen">I.O.</span> ERIC DAVIDSON</h1>
+      <h1>
+        <span className="displaySCreen">I.O.</span> ERIC DAVIDSON
+      </h1>
       <h4>&gt; Front-end developer</h4>
       {/* eslint-disable-next-line */}
-      <p className="comment mrgTop displaySCreen">// complete the game to continue</p>
+      <p className="comment mrgTop displaySCreen">
+        // complete the game to continue
+      </p>
       {/* eslint-disable-next-line */}
       <p className="comment mdMarginTop">// find my profile on Github:</p>
       <p className="gitHubLinkCover">

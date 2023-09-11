@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Gothic+A1:wght@100&family=IBM+Plex+Sans:wght@100&family=Libre+Baskerville&family=Montserrat&family=Open+Sans:wght@700&display=swap");
+
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-family: "Fira Code";
+}
+.dashBoard {
+}
+.dashBoardContent {
+}
+.contentHeaderCol {
+}
+
+.dashBoardImg {
+  border-right: 1px solid #1e2d3d;
+}
+.dashBoardImg div {
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30%;
+}
+.dashBoardImg div img {
+  width: 24px;
+  height: 24px;
+}
+.dashBoardMainContent {
+  /* border: 1px solid green !important; */
+  border-right: 1px solid #1e2d3d;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.dashBoardContentHeader {
+  user-select: none;
+  cursor: pointer;
+  height: 7%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1e2d3d !important;
+}
+.dashBoardContentHeader h5 {
+  font-size: 16px !important;
+  font-weight: 400;
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  /* border: 1px solid red; */
+}
+.dashBoardContentHeader img {
+  transform: rotate(-90deg);
+  transition: 0.3s;
+  /* border: 1px solid green; */
+  height: 6px;
+  width: 8.5px;
+  margin-inline: 5%;
+}
+
+.dashBoardContentMenu {
+  min-height: 33%;
+  /* border: 1px solid yellow; */
+  /* margin: 0%; */
+}
+.dashBoardContentMenu ul {
+  padding: 0% !important;
+  /* border: 1px solid pink; */
+  margin-top: 4%;
+  /* display: flex;
+  flex-direction: column; */
+}
+.dashBoardContentMenu li {
+  /* border: 1px solid grey; */
+  color: #607b96;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  list-style: none;
+  padding: 2% 0;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  /* align-items: center; */
+  /* border: 1px solid green; */
+  /* padding: 0;
+  margin: 0%; */
+}
+.dashBoardContentMenu img {
+  /* border: 1px solid green; */
+  width: 14.444px;
+  height: 13px;
+  margin-right: 5%;
+}
+.openFileImg {
+width: 12.728px !important;
+height: 7.778px !important;
+margin-inline: 5%;
+flex-shrink: 0;
+transition: 0.3s;
+transform: rotate(-90deg);
+
+}
+.activeFile {
+  transform: rotate(0deg) !important;
+}
+.defaultMargin {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.borderRight {
+  border-right: 1px solid #1e2d3d !important;
+}

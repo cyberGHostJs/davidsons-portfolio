@@ -11,10 +11,9 @@
   align-items: center;
   margin: 0 !important;
   padding: 0 !important;
-  width: 20%;
+  /* width: 20%; */
 }
 .nameLogo h5 {
-
   margin: 0 !important;
   margin-left: 10% !important;
   cursor: pointer;
@@ -36,7 +35,7 @@
   padding: 0 !important;
   white-space: nowrap;
   /* border: 1px solid green; */
-  margin-left: 4%;
+  /* margin-left: 4%; */
 }
 .mainNavMenu {
   list-style: none;
@@ -44,6 +43,7 @@
   flex: 1 !important;
   height: 100%;
   border-right: 1px solid #1e2d3d;
+  padding: 0 !important;
 }
 .mainNavMenu li {
   padding-inline: 2%;
@@ -59,13 +59,54 @@
   line-height: normal;
   cursor: pointer;
   transition: 0.5s;
+  position: relative;
 }
-.mainNavMenu li:hover {
-  color: white;
+.mainNavMenu li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 0;
+  border-bottom: 3px solid #FEA55F; /* Add a transparent border */
+  transition: border-color 0.3s; /* Add a transition effect */
+  pointer-events: none; /* Prevent the pseudo-element from blocking clicks */
+  transition: width 0.3s ease; /* Add a transition for the width property */
+  /* border-color: #FEA55F;  */
+
 }
-.active {
+
+.mainNavMenu li:hover::before {
+  width: 100%;
+
+}
+
+
+.mainNavMenu li.active {
   color: white !important;
+  position: relative; /* Ensure the pseudo-element is positioned relative to this element */
 }
+
+.mainNavMenu li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Adjust the height as needed */
+  background-color: #FEA55F; /* Set the border-bottom color */
+}
+
+
+.mainNavMenu li:hover {
+  color: rgba(255, 255, 255, 0.77);
+}
+
+/* .active {
+  color: white !important;
+  border-bottom: 3px solid #FEA55F;
+
+} */
 
 .contactMe {
   border-left: 1px solid #1e2d3d;
@@ -73,9 +114,9 @@
   justify-content: center;
   align-items: center;
   padding: 0 !important;
-  width: 13%;
+  /* width: 13%; */
   /* border: 1px solid green !important; */
-  margin-left: 29%;
+  /* margin-left: 29%; */
 }
 
 .contactMe div {
@@ -165,7 +206,6 @@
   font-family: "Fira Code";
   font-weight: 500;
   /* font-size: 16px; */
-
 }
 .const {
   color: #4d5bce;
@@ -177,7 +217,7 @@
   color: #e99287;
   cursor: pointer;
   margin-left: 2%;
-  border-bottom: 1px solid  #e99287;
+  border-bottom: 1px solid #e99287;
   transition: 0.5s;
 }
 .link:hover {
@@ -467,7 +507,6 @@
   right: 20%;
 }
 
-
 @media screen and (max-width: 1100px) {
   .game_cover {
     width: 85%;
@@ -503,11 +542,11 @@
   .bg2_cl2 {
     display: block;
   }
-  .mdMarginTop{
+  .mdMarginTop {
     margin-top: 20%;
   }
-  .info h4{
-    color: #43d9ad ;
+  .info h4 {
+    color: #43d9ad;
   }
 }
 @media screen and (max-width: 767px) {
@@ -517,19 +556,19 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .mdMarginTop{
+  .mdMarginTop {
     margin-top: 50%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .info h4{
+  .info h4 {
     font-size: 20px;
   }
-  .info h1{
+  .info h1 {
     font-size: 42px;
   }
-  .info h5{
+  .info h5 {
     font-size: 18px;
   }
 }

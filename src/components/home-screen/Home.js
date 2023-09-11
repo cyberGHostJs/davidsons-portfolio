@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Body, BottomNavigation, TopNavigation } from "../utils/Utils";
 import { useState } from "react";
 import styles from './home.module.css'
+import About from "../about-screen/About";
 // import { SnakeGame } from "../utils/Utils";
 
 function Home() {
@@ -17,7 +18,11 @@ function Home() {
           />
         </Col>
         <Col md="12" className={styles.body}>
-          <Body />
+          { selectedOption === "_hello" && <Body />}
+          { selectedOption === "_about-me" && <About/>}
+          { selectedOption === "_projects" && <p>_projects</p>}
+          { selectedOption === "_contact-me" && <p>_contact-me</p>}
+          
         </Col>
         <Col md="12" className={styles.bottomNav}>
           <BottomNavigation />

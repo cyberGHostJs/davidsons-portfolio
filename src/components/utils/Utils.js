@@ -194,7 +194,7 @@ export const TopNavigation = ({ setSelectedOption, selectedOption }) => {
 const LogoAndMenuIcon = () => {
   return (
     <>
-      <Col className=" nameLogo" md={{ span: "3", offset: ''}}>
+      <Col className=" nameLogo" md={{ span: "3", offset: "" }}>
         <h5>Davidson Onyebuchi</h5>
       </Col>
       {/* the menuIcon only displays in small screen */}
@@ -208,7 +208,7 @@ const LogoAndMenuIcon = () => {
 // NavItems
 const NavItems = ({ selectedOption, setSelectedOption }) => {
   return (
-    <Col className="mainNavMenuContainer " md={{ span: "4", offset: "" }}>
+    <Col className="mainNavMenuContainer" md={{ span: "4", offset: "" }}>
       <ul className="mainNavMenu ">
         {navItems.map((dashboardMenu) => (
           <li
@@ -231,14 +231,15 @@ const NavItems = ({ selectedOption, setSelectedOption }) => {
 // ContactMe
 const ContactMe = ({ selectedOption, setSelectedOption }) => {
   return (
-    <Col className="contactMe" md={{ span: "2", offset: "3" }}>
+    <Col
+      onClick={() => handleDefault("_contact-me", setSelectedOption)}
+      className={` ${
+        selectedOption === "_contact-me" ? "active" : ""
+      } contactMe`}
+      md={{ span: "2", offset: "3" }}
+    >
       <div>
-        <h5
-          className={` ${selectedOption === "_contact-me" ? "active" : ""}`}
-          onClick={() => handleDefault("_contact-me", setSelectedOption)}
-        >
-          _contact-me
-        </h5>
+        <h5>_contact-me</h5>
       </div>
     </Col>
   );

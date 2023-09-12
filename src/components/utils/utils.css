@@ -34,6 +34,7 @@
   display: flex;
   padding: 0 !important;
   white-space: nowrap;
+  user-select: none;
   /* border: 1px solid green; */
   /* margin-left: 4%; */
 }
@@ -68,19 +69,16 @@
   left: 0;
   width: 0%;
   height: 0;
-  border-bottom: 3px solid #FEA55F; /* Add a transparent border */
+  border-bottom: 3px solid #fea55f; /* Add a transparent border */
   transition: border-color 0.3s; /* Add a transition effect */
   pointer-events: none; /* Prevent the pseudo-element from blocking clicks */
   transition: width 0.3s ease; /* Add a transition for the width property */
   /* border-color: #FEA55F;  */
-
 }
 
 .mainNavMenu li:hover::before {
   width: 100%;
-
 }
-
 
 .mainNavMenu li.active {
   color: white !important;
@@ -94,9 +92,8 @@
   left: 0;
   width: 100%;
   height: 3px; /* Adjust the height as needed */
-  background-color: #FEA55F; /* Set the border-bottom color */
+  background-color: #fea55f; /* Set the border-bottom color */
 }
-
 
 .mainNavMenu li:hover {
   color: rgba(255, 255, 255, 0.77);
@@ -109,39 +106,68 @@
 } */
 
 .contactMe {
+  color: #607b96;
+  position: relative;
   border-left: 1px solid #1e2d3d;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 !important;
+  user-select: none;
   /* width: 13%; */
   /* border: 1px solid green !important; */
+  transition: 0.5s;
+  cursor: pointer;
   /* margin-left: 29%; */
 }
-
+.contactMe::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 0;
+  border-bottom: 3px solid #fea55f; /* Add a transparent border */
+  transition: border-color 0.3s; /* Add a transition effect */
+  pointer-events: none; /* Prevent the pseudo-element from blocking clicks */
+  transition: width 0.3s ease; /* Add a transition for the width property */
+  /* border-color: #FEA55F;  */
+}
+.contactMe:hover::before {
+  width: 100%;
+}
 .contactMe div {
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .contactMe h5 {
-  color: #607b96;
-  text-align: right;
   font-family: "Fira Code";
   font-size: 16px;
   font-style: normal;
   font-weight: 450;
   line-height: normal;
-  cursor: pointer;
   width: fit-content;
   height: fit-content;
   flex: 1 !important;
   margin: 0 !important;
-  transition: 0.5s;
 }
-.contactMe h5:hover {
-  color: white;
+
+.contactMe.active {
+  color: white !important;
+  position: relative;
+}
+.contactMe.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Adjust the height as needed */
+  background-color: #fea55f; /* Set the border-bottom color */
+}
+.contactMe:hover {
+  color: rgba(255, 255, 255, 0.77);
 }
 
 /* Utils ----BODY--  */
@@ -225,6 +251,7 @@
 }
 /*--- Blured bg--- */
 .bg_cl1 {
+  user-select: none !important;
   position: absolute;
   color: white;
   width: 30%;
@@ -238,6 +265,7 @@
   left: 46%;
 }
 .bg_cl2 {
+  user-select: none !important;
   width: 35%;
   height: 70%;
   transform: rotate(13.508deg);
@@ -479,6 +507,7 @@
 
 /*--- Blured bg--- */
 .bg2_cl1 {
+  user-select: none !important;
   display: none;
   position: absolute;
   color: white;
@@ -493,6 +522,7 @@
   left: 25%;
 }
 .bg2_cl2 {
+  user-select: none !important;
   display: none;
   width: 35%;
   height: 70%;

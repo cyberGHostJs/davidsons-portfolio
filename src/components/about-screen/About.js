@@ -1,4 +1,3 @@
-// import { Col, Row } from "react-bootstrap";
 import styles from "./about.module.css";
 import icon1 from "./img/personal-info-icon.png";
 import icon2 from "./img/professional-info-icon.png";
@@ -10,7 +9,6 @@ import subFolder from "./img/subFolder.png";
 import hobbiesIcon from "./img/hobbies-icon.png";
 import fileOpened from "./img/fileOpened.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
-// import { TopNavigation } from "../utils/Utils";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -34,6 +32,7 @@ const handleClick = (item, active, setActive) => {
   }
 };
 
+// DashBoardContent
 const DashBoardContent = () => {
   return (
     <Row className={`${styles.container} `}>
@@ -55,45 +54,13 @@ const DashBoardContent = () => {
 
 const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
   return (
-    <div
-      style={{
-        // border: "1px solid pink",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        className=""
-        style={{
-          height: "7%",
-          display: "flex",
-          borderBottom: "1px solid #1e2d3d",
-        }}
-      >
-        {headTags && headTags}
-      </div>
-      <div
-        className=""
-        style={{
-          flex: "1",
-          display: "flex",
-          // padding: "0 4.8% ",
-          paddingLeft: "4.8%",
-          paddingRight: "3%",
-        }}
-      >
-        <div
-          style={{
-            flex: "1",
-            borderRight: "1px solid #1e2d3d",
-            height: "100%",
-            display: "flex",
-            padding: " 4.8% 0",
-            overflow: "auto", //HERE IS WHERE THE PROBLEM LIES
-          }}
-        >
-          {detailedBody}
+    <div className={styles.DashConDisplayContainer}>
+      {/* content header */}
+      <div className={styles.DashConDisplayHeadCon}>{headTags && headTags}</div>
+      {/* content body */}
+      <div className={styles.contentHalfcontainer}>
+        <div className={styles.contentHalfItem}>
+          <div className={styles.DetailedBody}>{detailedBody}</div>
         </div>
       </div>
     </div>
@@ -102,184 +69,77 @@ const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
 
 const DetailedBody1 = () => {
   return (
-    <div
-      style={{
-        // border: "1px solid pink",
-        flex: "1",
-        maxHeight: "65vh",
-        overflowY: "auto",
-        fontSize: "15px",
-        color: "#607B96",
-      }}
-    >
+    <>
       <MessageComponent />
-    </div>
+    </>
   );
 };
 
 const DetailedBody2 = () => {
   return (
-    <div
-      className=""
-      style={{
-        flex: "1",
-        height: "65vh",
-        overflowY: "auto",
-        color: "#607B96",
-        fontSize: "14px",
-      }}
-    >
-      <h6 className="" style={{ height: "" }}>
+    <>
+      <h6>
+        {/* eslint-disable-next-line  */}
+        {/* eslint-disable-next-line  */}
         // Code snippet showcase:
       </h6>
-      <div
-        className=""
-        style={{ marginTop: "10%", display: "flex", height: "12%" }}
-      >
-        <div
-          className=""
-          style={{
-            width: "10%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {" "}
-          <img
-            src={userimg} // Replace with your image URL
-            alt={userimg}
-            style={{
-              width: "36px",
-              height: "36px",
-              // borderRadius: '50%',
-            }}
-          />
-        </div>
-        <div
-          className=""
-          style={{
-            flex: "1",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            className=""
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              flex: "1",
-              alignItems: "center",
-            }}
-          >
-            <p
-              className=""
-              style={{ padding: "0", margin: "0", width: "fit-content" }}
-            >
-              @username
-            </p>
-            <div
-              className=""
-              style={{
-                padding: "0",
-                margin: "0",
-                display: "flex",
-                alignItems: "center",
-                width: "65%",
-                // justifyContent: "space-between",
-              }}
-            >
-              <div
-                className=""
-                style={{ display: "flex", whiteSpace: "nowrap", flex: "1" }}
-              >
-                <img
-                  src={comments}
-                  alt={comments}
-                  style={{
-                    width: "18px",
-                    height: "18px",
-                    margin: " 0 5%",
-                    // borderRadius: '50%',
-                  }}
-                />
-                <p style={{ padding: "0", margin: "0", flex: "1" }}> details</p>
-              </div>
-              <div
-                className=""
-                style={{ display: "flex", whiteSpace: "nowrap", flex: "1" }}
-              >
-                <img
-                  src={Star}
-                  alt={Star}
-                  style={{
-                    width: "18px",
-                    height: "18px",
-                    // margin: " 0 5%",
-                    // borderRadius: '50%',
-                  }}
-                />
-                <p style={{ padding: "0", margin: "0", flex: "1" }}> 3 stars</p>
-              </div>
+      <CodeSnippetHead />
+      <CodeSnippet />
+    </>
+  );
+};
+
+const CodeSnippetHead = () => {
+  return (
+    <div className={styles.snippetHead}>
+      <div className={styles.snippetHeadImgCover}>
+        <img
+          src={userimg} // Replace with your image URL
+          alt={userimg}
+        />
+      </div>
+      <div className={styles.snippetHeadinfo}>
+        <div className={styles.snippetHeadinfoTop}>
+          <p className={styles.userName}>@davidson</p>
+          <div className={styles.detailsAndStarContainer}>
+            <div className={styles.details}>
+              <img src={comments} alt={comments} />
+              <p> details</p>
+            </div>
+            <div className={styles.details}>
+              <img src={Star} alt={Star} />
+              <p> 3 stars</p>
             </div>
           </div>
-          <div
-            className=""
-            style={{ flex: "1", display: "flex", alignItems: "center" }}
-          >
-            <p
-              style={{
-                padding: "0",
-                margin: "0",
-                width: "fit-content",
-                height: "fit-content",
-              }}
-              className=""
-            >
-              Created 5 months ago
-            </p>
-          </div>
+        </div>
+        <div className={styles.date}>
+          <p>Created 5 months ago</p>
         </div>
       </div>
-      <div className="" style={{ height: "48%" }}>
-        <div
-          style={{
-            border: "1px solid #1E2D3D",
-            borderRadius: "15px",
-            width: "95%",
-            height: "100%",
-            display: "flex",
+    </div>
+  );
+};
+
+const CodeSnippet = () => {
+  return (
+    <div className={styles.snippetContainer}>
+      <div className="code-container ">
+        <SyntaxHighlighter
+          language="javascript"
+          style={{ ...solarizedlight }} // Use your desired code highlighting style
+          className="black-background" // Apply the CSS class for black background
+          customStyle={{
+            color: "red",
+            ".variable": {
+              color: "blue",
+            },
+            ".comment": {
+              color: "green",
+            },
           }}
         >
-          <div className="" style={{ flex: "1", overflowX: "auto" }}>
-            <div
-              className="code-container "
-              style={{ height: "100%", margin: "0", padding: "0" }}
-            >
-              {" "}
-              {/* Container for horizontal scrolling */}
-              <SyntaxHighlighter
-                language="javascript"
-                style={{ ...solarizedlight }} // Use your desired code highlighting style
-                className="black-background" // Apply the CSS class for black background
-                customStyle={{
-                  color: "red", // Color for function names
-                  ".variable": {
-                    color: "blue", // Color for variables
-                  },
-                  ".comment": {
-                    color: "green", // Color for comments
-                  },
-                }}
-              >
-                {codeSnippet}
-              </SyntaxHighlighter>
-            </div>
-          </div>
-        </div>
+          {codeSnippet}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
@@ -287,22 +147,9 @@ const DetailedBody2 = () => {
 
 const HeadTags = () => {
   return (
-    <div
-      style={{
-        borderRight: "1px solid #1e2d3d",
-        paddingInline: "12.18px",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    <div className={styles.headtags}>
       personal-info
-      <img
-        src={closeIcon}
-        alt={closeIcon}
-        height="13px"
-        width="13px"
-        style={{ marginLeft: "49.1px" }}
-      />
+      <img src={closeIcon} alt={closeIcon} />
     </div>
   );
 };
@@ -335,8 +182,8 @@ const DashBoard = () => {
             <img
               src={solidDown}
               alt={solidDown}
-              className={showInfo && `${styles.activeFile}`}
-            />{" "}
+              className={`${showInfo ? `${styles.activeFile}` : ""}`}
+            />
             <h5>personal-info</h5>
           </div>
           {showInfo && (
@@ -356,8 +203,8 @@ const DashBoard = () => {
             <img
               src={solidDown}
               alt={solidDown}
-              className={showContact && `${styles.activeFile}`}
-            />{" "}
+              className={`${showContact ? `${styles.activeFile} ` : ""}`}
+            />
             <h5>contacts</h5>
           </div>
 
@@ -379,14 +226,8 @@ const ContactInfoData = () => {
   return (
     <ul>
       {contactItems.map((items) => (
-        <li key={items.label} style={{}}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              overflowWrap: "break-word",
-            }}
-          >
+        <li key={items.label}>
+          <div className={styles.contactItem}>
             <img
               src={items.img}
               alt={items.label}
@@ -425,7 +266,7 @@ const PersonalInfoData = () => {
           key={items.label}
           onClick={() => handleClick(items.label, active, setActive)}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div className={styles.contactItem}>
             <img
               src={fileOpened}
               alt={fileOpened}
@@ -449,14 +290,7 @@ const SubFolders = ({ subData }) => {
   return (
     <ul>
       {subData.map((items) => (
-        <li
-          key={items.label}
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
+        <li key={items.label} className={styles.PersonalInfoItems}>
           <img
             src={subFolder}
             alt={subFolder}

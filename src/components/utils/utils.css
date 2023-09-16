@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Gothic+A1:wght@100&family=IBM+Plex+Sans:wght@100&family=Libre+Baskerville&family=Montserrat&family=Open+Sans:wght@700&display=swap");
+::selection {
+  background:#1E2D3D;  color: #fff; /* Change this to your desired text color */
+}
 
 /* Utils - TopNavigationContainer  */
 .TopNavigationContainer {

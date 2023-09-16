@@ -13,16 +13,23 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { Col, Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import {
   bio,
   codeSnippet,
   contactItems,
   education,
   interests,
+  menuOptions,
   navItems,
+  reducer,
 } from "../utils/Data";
 import MessageComponent from "./MessageComponent";
+import { selectedOptionApi } from "../home-screen/Home";
+import {
+  ProjectDashBoard,
+  ProjectDashBoardCntent,
+} from "../project-screen/Project";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -41,7 +48,7 @@ const DashBoardContent = () => {
         className={`${styles.contentHeaderCol} ${styles.defaultMargin} ${styles.borderRight} `}
       >
         <DashBoardContentDisplay
-          headTags={<HeadTags />}
+          headTags={<HeadTags text={"personal-info"} />}
           detailedBody={<DetailedBody1 />}
         />
       </Col>
@@ -52,7 +59,7 @@ const DashBoardContent = () => {
   );
 };
 
-const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
+export const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
   return (
     <div className={styles.DashConDisplayContainer}>
       {/* content header */}
@@ -145,10 +152,10 @@ const CodeSnippet = () => {
   );
 };
 
-const HeadTags = () => {
+const HeadTags = ({ text }) => {
   return (
     <div className={styles.headtags}>
-      personal-info
+      {text}
       <img src={closeIcon} alt={closeIcon} />
     </div>
   );
@@ -302,20 +309,34 @@ const SubFolders = ({ subData }) => {
     </ul>
   );
 };
+export const todoTitle = createContext();
+export const reducerContext = createContext();
 
 function About() {
+  const [completTodos, setCompletedTodos] = useState([]);
+  const [todos, dispatch] = useReducer(reducer, menuOptions);
+
+  const selectedOption = useContext(selectedOptionApi);
+
+
   return (
-    <Row className={`${styles.container} `}>
-      <Col
-        className={`${styles.dashBoard} ${styles.defaultMargin}`}
-        md={{ span: "3" }}
-      >
-        <DashBoard />
-      </Col>
-      <Col className={`${styles.dashBoardContent} ${styles.defaultMargin} `}>
-        <DashBoardContent />
-      </Col>
-    </Row>
+    <reducerContext.Provider value={{ todos, dispatch}}>
+    <todoTitle.Provider value={{ completTodos, setCompletedTodos }}>
+      <Row className={`${styles.container} `}>
+        <Col
+          className={`${styles.dashBoard} ${styles.defaultMargin}`}
+          md={{ span: "3" }}
+        >
+          {selectedOption === "_about-me" && <DashBoard />}
+          {selectedOption === "_projects" && <ProjectDashBoard />}
+        </Col>
+        <Col className={`${styles.dashBoardContent} ${styles.defaultMargin} `}>
+          {selectedOption === "_about-me" && <DashBoardContent />}
+          {selectedOption === "_projects" && <ProjectDashBoardCntent />}
+        </Col>
+      </Row>
+    </todoTitle.Provider>
+    </reducerContext.Provider>
   );
 }
 

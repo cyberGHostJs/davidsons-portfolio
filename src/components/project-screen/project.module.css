@@ -1,0 +1,226 @@
+.defaultMargin {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-family: "Fira Code";
+}
+.dashBoardImg {
+  border-right: 1px solid #1e2d3d;
+}
+.dashBoardMainContent {
+  /* border: 1px solid green !important; */
+  border-right: 1px solid #1e2d3d;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.dashBoardContentHeader {
+  user-select: none;
+  cursor: pointer;
+  height: 7%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1e2d3d !important;
+}
+.dashBoardContentHeader h5 {
+  font-size: 16px !important;
+  font-weight: 400;
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  /* border: 1px solid red; */
+}
+.dashBoardContentHeader img {
+  transform: rotate(-90deg);
+  transition: 0.3s;
+  /* border: 1px solid green; */
+  height: 6px;
+  width: 8.5px;
+  margin-inline: 5%;
+}
+.activeFile {
+  transform: rotate(0deg) !important;
+}
+/* .dashBoardContentMenu {
+  border: 1px solid blue;
+} */
+.dashBoardContentMenu ul {
+  /* border: 1px solid green; */
+  margin: 6% 7% !important;
+  padding: 0 !important;
+}
+.dashBoardContentMenu li {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid peru; */
+  user-select: none;
+  margin-bottom: 7%;
+}
+.checkbox[type="checkbox"] {
+  background-color: #011627;
+  border: 1px solid #607b96;
+  border-radius: 2px;
+  appearance: none;
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox[type="checkbox"]:checked {
+  background-color: #607b96;
+  background: #607b96
+    url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==")
+    5px 5px no-repeat;
+}
+
+.navItems {
+  /* border: 1px solid red; */
+  white-space: nowrap;
+  margin-left: 8%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  color: #607b96;
+}
+.navItems img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5%;
+}
+.clr {
+  color: white;
+}
+
+/* ---- */
+.headerCover {
+  /* border: 1px solid green; */
+  height: 7%;
+  display: flex;
+  color: #607b96;
+
+}
+.header {
+  /* border: 1px solid grey; */
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-inline: 2%;
+  user-select: none;
+  
+}
+.closeCover {
+  border-right: 1px solid #1e2d3d !important;
+  display: flex;
+  align-items: center;
+  padding: 0 2%;
+  flex-shrink: 0;
+}
+.closeCover img{
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
+.profileCard {
+  position: relative;
+
+  border: 1px solid #1E2D3D;
+  border-radius: 15px;
+  /* padding: 10px; */
+  margin: 3.5%;
+  /* text-align: center; */
+  height: 30vh;
+  /* max-height: 35%; */
+}
+/* border: 1px solid grey; */
+
+.profileCard img {
+  /* border: 1px solid #1E2D3D; */
+  width: 100%;
+  height: 50%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  /* object-fit: cover; */
+}
+.profileCard p {
+  /* border: 1px solid green; */
+  margin: 4% auto; 
+  width: 90%;
+  font-size: 80%;
+  color: #607B96;
+
+  
+}
+.profileCard button {
+  margin-left: 4%;
+  border-radius: 8px;
+  background: #1C2B3A;
+  color: #FFFFFF;
+  border: none;
+  padding: 7px 14px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.profileCard button:hover {
+  background: #1724318e;
+}
+
+.bgColor {
+  background: rgba(3, 3, 3, 0.513);
+  /* background: url(<path-to-image>), lightgray 50%, #011221; */
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  
+}
+.bgColor div{
+  height: 30% !important;
+  width: 15% !important;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+.vue {
+  background-color: #81D4AF !important;
+}
+.react {
+  background-color: #86E1F9 !important;
+}
+.bgColor div img{
+  /* border: 2px solid green; */
+  width: 85%;
+  height: 85%;
+  border-radius: 0 !important;
+}
+
+
+/* Define styles for grid layout (3 columns per row) */
+.profileCardContainer {
+  margin: 0 !important;
+  padding: 3%;
+  /* margin-right: 2% !important; */
+  /* border-top: 1px solid #1e2d3d !important; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 20px; /* Gap between cards */
+  max-height: 73vh; /* Set a fixed maximum height */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  
+}
+.projectLink {
+  text-decoration: none;
+  color: #607B96;
+}

@@ -1,8 +1,27 @@
-import React from "react";
-import { messageData } from "../utils/Data"; // Import your message data
+import React, { useContext, useEffect, useState } from "react";
+import { aboutMessageData, codingMessageData, gamingMessageData, highSchoolMessageData, skatingMessageData, universityMessageData } from "../utils/Data"; // Import your message data
+import { viewContext } from "./About";
 
 const MessageComponent = () => {
   const maxLineLength = 38; // Maximum characters per line
+  const [messageDisplayed, setMessageDisplayed] = useState('null')
+  const {view} = useContext(viewContext)
+  useEffect(()=>{
+    if (view === 'about-me'){
+      setMessageDisplayed(aboutMessageData)
+    } else if (view === 'coding'){
+      setMessageDisplayed(codingMessageData)
+    }else if (view === 'gaming'){
+      setMessageDisplayed(gamingMessageData)
+    }else if (view === 'skating'){
+      setMessageDisplayed(skatingMessageData)
+    }else if (view === 'high-school'){
+      setMessageDisplayed(highSchoolMessageData)
+    }else if (view === 'university'){
+      setMessageDisplayed(universityMessageData)
+    }
+  },[view])
+
 
   const formatMessage = (message) => {
     const paragraphs = message.split("\n"); // Split message into paragraphs
@@ -43,10 +62,10 @@ const MessageComponent = () => {
 
   return (
     <div>
-      {formatMessage(messageData).map((formattedMessage, index) => (
-        <div className="" style={{ display: 'flex' }} key={index}>
-          <div className="" style={{ width: '5%', display: 'flex', marginRight: '5%', justifyContent: 'center'}}>{index + 1}</div>
-          <div className="" style={{ width: '85%'}}>{formattedMessage}</div>
+      {formatMessage(messageDisplayed).map((formattedMessage, index) => (
+        <div className="MessageComponentContainer" key={index}>
+          <div className="index ssNoDisplay">{index + 1}</div>
+          <div className="formattedMessage ">{formattedMessage}</div>
         </div>
       ))}
     </div>

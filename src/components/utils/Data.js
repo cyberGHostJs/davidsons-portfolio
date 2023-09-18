@@ -1,17 +1,17 @@
 import file1 from "../about-screen/img/file1.png";
 import file2 from "../about-screen/img/file2.png";
 import file3 from "../about-screen/img/file3.png";
-import reactLogo from '../project-screen/img/reactLogo.png';
-import vueLogo from '../project-screen/img/vueLogo.png';
-import htmlLogo from '../project-screen/img/htmlLogo.png';
-import cssLogo from '../project-screen/img/cssLogo.png';
+import reactLogo from "../project-screen/img/reactLogo.png";
+import vueLogo from "../project-screen/img/vueLogo.png";
+import htmlLogo from "../project-screen/img/htmlLogo.png";
+import cssLogo from "../project-screen/img/cssLogo.png";
 import mailIcon from "../about-screen/img/mail-icon.png";
 import phoneIcon from "../about-screen/img/phone-icon.png";
-import project1 from '../project-screen/img/project1.png'
-import project2 from '../project-screen/img/project2.png'
-import project3 from '../project-screen/img/project3.png'
-import vueTag from '../project-screen/img/vueTag.png'
-import reactTag from '../project-screen/img/reactTag.png'
+import project1 from "../project-screen/img/project1.png";
+import project2 from "../project-screen/img/project2.png";
+import project3 from "../project-screen/img/project3.png";
+import vueTag from "../project-screen/img/vueTag.png";
+import reactTag from "../project-screen/img/reactTag.png";
 
 export const navItems = [
   { label: "bio", img: file1 },
@@ -20,10 +20,10 @@ export const navItems = [
 ];
 export const contactItems = [
   { label: "@gmail", img: mailIcon },
-  { label: "0808 517 6952", img: phoneIcon},
+  { label: "0808 517 6952", img: phoneIcon },
 ];
 
-export const bio = [ { label: "about-me" }];
+export const bio = [{ label: "about-me" }];
 export const interests = [
   { label: "coding" },
   { label: "gaming" },
@@ -32,7 +32,7 @@ export const interests = [
 export const education = [{ label: "high-school" }, { label: "university" }];
 
 // data.js
-export const messageData = `/**
+export const aboutMessageData = `/**
 About me
 Experienced Frontend Developer
 2 Years of Proven Expertise
@@ -50,10 +50,30 @@ Ready to elevate your projects to new
 heights. Let's connect!
 **/`;
 
+export const codingMessageData = `/**
+coding 
+**/`;
+
+export const gamingMessageData = `/**
+gaming MessageData 
+**/`;
+
+export const skatingMessageData = `/**
+skating MessageData 
+**/`;
+
+export const highSchoolMessageData = `/**
+highSchool MessageData 
+**/`;
+
+export const universityMessageData = `/**
+university MessageData 
+**/`;
+
 export const users = [
-  { id: 1, name: 'User 1', image: file1 },
-  { id: 2, name: 'User 2', image: file2 },
-  { id: 3, name: 'User 3', image: file3},
+  { id: 1, name: "User 1", image: file1 },
+  { id: 2, name: "User 2", image: file2 },
+  { id: 3, name: "User 3", image: file3 },
   // Add more user data as needed
 ];
 export const codeSnippet = `
@@ -98,29 +118,27 @@ export const profileData = [
     name: "John Doe",
     image: project1,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
-    link: 'https://movies-watch-list.vercel.app/',
+    link: "https://movies-watch-list.vercel.app/",
     imgTag: reactTag,
-    tag: 'React, HTML, CSS'
-
+    tag: "React, HTML, CSS",
   },
   {
     id: 2,
     name: "Jane Smith",
     image: project2,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
-    link: 'https://care-pro.vercel.app/login',
+    link: "https://care-pro.vercel.app/login",
     imgTag: reactTag,
-    tag: 'React, HTML, CSS'
-
+    tag: "React, HTML, CSS",
   },
   {
     id: 3,
     name: "Alice Johnson",
     image: project3,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
-    link: 'https://apivault.dev/',
+    link: "https://apivault.dev/",
     imgTag: vueTag,
-    tag: 'Vue, HTML, CSS'
+    tag: "Vue, HTML, CSS",
   },
   // {
   //   id: 4,
@@ -199,15 +217,15 @@ export const profileData = [
 export const reducer = (state, action) => {
   if (action.type === "COMPLETE") {
     return state.map((todo) => {
-      if (todo.id === action.id){
-        return{ ...todo, complete: !todo.complete}
+      if (todo.id === action.id) {
+        return { ...todo, complete: !todo.complete };
       } else {
-        return todo
+        return todo;
       }
-    })
+    });
   }
-  if (action.type === "RESET"){
+  if (action.type === "RESET") {
     return state.map((todo) => ({ ...todo, complete: false }));
   }
-  return state
-}
+  return state;
+};

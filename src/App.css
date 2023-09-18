@@ -58,3 +58,38 @@
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent line breaks within code */
 }
+
+
+/* MessageComponentContainer */
+.MessageComponentContainer {
+  display: flex;
+}
+.index {
+  width: 5%;
+  display: flex;
+  margin-right: 5%;
+  justify-content: center;
+}
+.formattedMessage {
+  width: 85%;
+}
+@media screen and (max-width: 949px) {
+  .ssNoDisplay {
+   display: none !important;
+  }
+  .MessageComponentContainer {
+    justify-content: center;
+    align-items: center;
+  }
+  /* .formattedMessage {
+  } */
+}
+@media screen and (max-width: 635px) {
+  .code-container {
+    width: 100%  !important;
+    max-width: 100% !important; /* Set a max-width to control the maximum width */
+  }
+  .ssNoDisplay635 {
+    display: none !important;
+   }
+}

@@ -15,8 +15,10 @@
   margin: 0 !important;
   padding: 0 !important;
   /* width: 20%; */
+  z-index: 2;
 }
 .nameLogo h5 {
+
   margin: 0 !important;
   margin-left: 10% !important;
   cursor: pointer;
@@ -62,7 +64,7 @@
   font-weight: 450;
   line-height: normal;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
   position: relative;
 }
 .mainNavMenu li::before {
@@ -85,18 +87,24 @@
 
 .mainNavMenu li.active {
   color: white !important;
-  position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+}
+.mainNavMenu li.active::before {
+  width: 100%;
+  /* position: relative; */
+   /* Ensure the pseudo-element is positioned relative to this element */
 }
 
-.mainNavMenu li.active::after {
+/* .mainNavMenu li.active::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px; /* Adjust the height as needed */
-  background-color: #fea55f; /* Set the border-bottom color */
-}
+  height: 3px;  */
+  /* Adjust the height as needed */
+  /* background-color: #fea55f;  */
+  /* Set the border-bottom color */
+/* } */
 
 .mainNavMenu li:hover {
   color: rgba(255, 255, 255, 0.77);
@@ -134,7 +142,6 @@
   transition: border-color 0.3s; /* Add a transition effect */
   pointer-events: none; /* Prevent the pseudo-element from blocking clicks */
   transition: width 0.3s ease; /* Add a transition for the width property */
-  /* border-color: #FEA55F;  */
 }
 .contactMe:hover::before {
   width: 100%;
@@ -158,16 +165,9 @@
 
 .contactMe.active {
   color: white !important;
-  position: relative;
 }
-.contactMe.active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.contactMe.active::before {
   width: 100%;
-  height: 3px; /* Adjust the height as needed */
-  background-color: #fea55f; /* Set the border-bottom color */
 }
 .contactMe:hover {
   color: rgba(255, 255, 255, 0.77);
@@ -551,6 +551,8 @@
     width: 25px;
   }
   .menuBtnn {
+    /* border: 1px solid blue; */
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -15,7 +15,7 @@ export const ProjectDashBoardCntent = () => {
     dispatch({ type: "RESET" });
   };
   return (
-    <Row className={`${styles.container} ${styles.defaultMargin}`}>
+    <Row className={`${styles.container} ${styles.borderLeft}`}>
       <Col
         md={{ span: "12" }}
         style={{ display: "flex" }}
@@ -104,9 +104,9 @@ export const ProjectDashBoard = () => {
   };
 
   return (
-    <Row className={`boda ${styles.container} `}>
+    <Row className={` ${styles.container} `}>
       <Col
-        className={`boda ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
+        className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "12" }}
       >
         <div className={` ${styles.container}`}>

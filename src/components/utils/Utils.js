@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { Col, Row } from "react-bootstrap";
 import menuIcon from "../home-screen/img/menuIcon.png";
 // import closeIcon from "../home-screen/img/closeIcon.png";
@@ -12,6 +12,7 @@ import github from "../home-screen/img/github.png";
 import bolt from "../home-screen/img/bolt-up-right.png";
 import boltDwnL from "../home-screen/img/bolt-down-left.png";
 import boltDnwR from "../home-screen/img/bolt-down-right.png";
+import { selectedOptionApi, showApi } from "../home-screen/Home";
 // import SnakeFood1 from "../home-screen/img/SnakeFood1.png";
 
 // snake game constants
@@ -178,10 +179,7 @@ export const TopNavigation = ({ setSelectedOption, selectedOption }) => {
   return (
     <Row className="TopNavigationContainer ">
       <LogoAndMenuIcon />
-      <NavItems
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-      />
+      <NavItems />
       <ContactMe
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
@@ -192,13 +190,14 @@ export const TopNavigation = ({ setSelectedOption, selectedOption }) => {
 
 // LogoAndMenuIcon
 const LogoAndMenuIcon = () => {
+  const { setShow } = useContext(showApi);
   return (
     <>
       <Col className=" nameLogo" md={{ span: "3", offset: "" }}>
         <h5>Davidson Onyebuchi</h5>
       </Col>
       {/* the menuIcon only displays in small screen */}
-      <div className="menuBtnn">
+      <div className="menuBtnn" onClick={() => setShow((prev) => !prev)}>
         <img src={menuIcon} alt={menuIcon} />
       </div>
     </>
@@ -206,7 +205,9 @@ const LogoAndMenuIcon = () => {
 };
 
 // NavItems
-const NavItems = ({ selectedOption, setSelectedOption }) => {
+const NavItems = () => {
+  const { selectedOption, setSelectedOption } = useContext(selectedOptionApi);
+
   return (
     <Col className="mainNavMenuContainer" md={{ span: "4", offset: "" }}>
       <ul className="mainNavMenu ">

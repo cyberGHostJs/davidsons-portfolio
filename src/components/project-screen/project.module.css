@@ -9,12 +9,15 @@
   height: 100% !important;
   font-family: "Fira Code";
 }
+.borderLeft {
+  border-left: 1px solid #1e2d3d !important;
+}
 .dashBoardImg {
   border-right: 1px solid #1e2d3d;
 }
 .dashBoardMainContent {
   /* border: 1px solid green !important; */
-  border-right: 1px solid #1e2d3d;
+  /* border-right: 1px solid #1e2d3d; */
   margin: 0 !important;
   padding: 0 !important;
 }

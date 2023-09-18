@@ -13,7 +13,13 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { Col, Row } from "react-bootstrap";
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import {
   bio,
   codeSnippet,
@@ -42,17 +48,20 @@ const handleClick = (item, active, setActive) => {
 // DashBoardContent
 const DashBoardContent = () => {
   return (
-    <Row className={`${styles.container} `}>
+    <Row className={` ${styles.container} ${styles.borderLeft}`}>
       <Col
         md={{ span: "6" }}
-        className={`${styles.contentHeaderCol} ${styles.defaultMargin} ${styles.borderRight} `}
+        className={` ${styles.contentHeaderCol} ${styles.defaultMargin} ${styles.borderRight} ${styles.ssFullWidth}`}
       >
         <DashBoardContentDisplay
           headTags={<HeadTags text={"personal-info"} />}
           detailedBody={<DetailedBody1 />}
         />
       </Col>
-      <Col md={{ span: "6" }} className={`${styles.defaultMargin} `}>
+      <Col
+        md={{ span: "6" }}
+        className={`${styles.defaultMargin} ${styles.ssFullWidth}`}
+      >
         <DashBoardContentDisplay detailedBody={<DetailedBody2 />} />
       </Col>
     </Row>
@@ -61,13 +70,15 @@ const DashBoardContent = () => {
 
 export const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
   return (
-    <div className={styles.DashConDisplayContainer}>
+    <div className={`${styles.DashConDisplayContainer} `}>
       {/* content header */}
-      <div className={styles.DashConDisplayHeadCon}>{headTags && headTags}</div>
+      <div className={`${styles.DashConDisplayHeadCon} `}>
+        {headTags && headTags}
+      </div>
       {/* content body */}
-      <div className={styles.contentHalfcontainer}>
-        <div className={styles.contentHalfItem}>
-          <div className={styles.DetailedBody}>{detailedBody}</div>
+      <div className={`${styles.contentHalfcontainer} `}>
+        <div className={`${styles.contentHalfItem} `}>
+          <div className={` ${styles.DetailedBody} `}>{detailedBody}</div>
         </div>
       </div>
     </div>
@@ -75,37 +86,42 @@ export const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
 };
 
 const DetailedBody1 = () => {
+  const { view } = useContext(viewContext);
   return (
     <>
-      <MessageComponent />
+      {view === "none" ? (
+        "open folder and select a file to view"
+      ) : (
+        <MessageComponent />
+      )}
     </>
   );
 };
 
 const DetailedBody2 = () => {
   return (
-    <>
-      <h6>
+    <div className="ssNoDisplay635">
+      <h6 className={styles.body2Header}>
         {/* eslint-disable-next-line  */}
         {/* eslint-disable-next-line  */}
         // Code snippet showcase:
       </h6>
       <CodeSnippetHead />
       <CodeSnippet />
-    </>
+    </div>
   );
 };
 
 const CodeSnippetHead = () => {
   return (
-    <div className={styles.snippetHead}>
-      <div className={styles.snippetHeadImgCover}>
+    <div className={`${styles.snippetHead} `}>
+      <div className={`${styles.snippetHeadImgCover} `}>
         <img
           src={userimg} // Replace with your image URL
           alt={userimg}
         />
       </div>
-      <div className={styles.snippetHeadinfo}>
+      <div className={`${styles.snippetHeadinfo} `}>
         <div className={styles.snippetHeadinfoTop}>
           <p className={styles.userName}>@davidson</p>
           <div className={styles.detailsAndStarContainer}>
@@ -113,7 +129,7 @@ const CodeSnippetHead = () => {
               <img src={comments} alt={comments} />
               <p> details</p>
             </div>
-            <div className={styles.details}>
+            <div className={`${styles.details} ${styles.SSNoDisplay}`}>
               <img src={Star} alt={Star} />
               <p> 3 stars</p>
             </div>
@@ -129,8 +145,8 @@ const CodeSnippetHead = () => {
 
 const CodeSnippet = () => {
   return (
-    <div className={styles.snippetContainer}>
-      <div className="code-container ">
+    <div className={`${styles.snippetContainer}`}>
+      <div className="code-container">
         <SyntaxHighlighter
           language="javascript"
           style={{ ...solarizedlight }} // Use your desired code highlighting style
@@ -153,11 +169,23 @@ const CodeSnippet = () => {
 };
 
 const HeadTags = ({ text }) => {
+  const { view, setView } = useContext(viewContext);
+
   return (
-    <div className={styles.headtags}>
-      {text}
-      <img src={closeIcon} alt={closeIcon} />
-    </div>
+    <>
+      {view === "none" ? (
+        ""
+      ) : (
+        <div className={`${styles.headtags}`}>
+          // {text} <span style={{ color: "#607B96" }}> / {view}</span>
+          <img
+            src={closeIcon}
+            alt={closeIcon}
+            onClick={() => setView("none")}
+          />
+        </div>
+      )}
+    </>
   );
 };
 
@@ -167,7 +195,7 @@ const DashBoard = () => {
   return (
     <Row className={`${styles.container} `}>
       <Col
-        className={`${styles.dashBoardImg} ${styles.defaultMargin} `}
+        className={`${styles.dashBoardImg} ${styles.defaultMargin} ${styles.SSNoDisplay} `}
         md={{ span: "3" }}
       >
         <div>
@@ -177,12 +205,12 @@ const DashBoard = () => {
         </div>
       </Col>
       <Col
-        className={`${styles.dashBoardMainContent} ${styles.defaultMargin} `}
+        className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "9" }}
       >
-        <div className={`${styles.container} `}>
+        <div className={` ${styles.container} `}>
           <div
-            className={`${styles.dashBoardContentHeader} ${styles.defaultMargin}`}
+            className={` ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}
             md={{ span: "12", offset: "" }}
             onClick={() => setShowInfo((prev) => !prev)}
           >
@@ -195,7 +223,7 @@ const DashBoard = () => {
           </div>
           {showInfo && (
             <div
-              className={` ${styles.dashBoardContentMenu} ${styles.defaultMargin} `}
+              className={`${styles.dashBoardContentMenu} ${styles.defaultMargin} `}
               md={{ span: "12", offset: "" }}
             >
               <PersonalInfoData />
@@ -231,7 +259,7 @@ const DashBoard = () => {
 
 const ContactInfoData = () => {
   return (
-    <ul>
+    <ul className="">
       {contactItems.map((items) => (
         <li key={items.label}>
           <div className={styles.contactItem}>
@@ -269,11 +297,11 @@ const PersonalInfoData = () => {
   return (
     <ul>
       {navItems.map((items) => (
-        <li
-          key={items.label}
-          onClick={() => handleClick(items.label, active, setActive)}
-        >
-          <div className={styles.contactItem}>
+        <li key={items.label}>
+          <div
+            className={styles.contactItem}
+            onClick={() => handleClick(items.label, active, setActive)}
+          >
             <img
               src={fileOpened}
               alt={fileOpened}
@@ -294,10 +322,19 @@ const PersonalInfoData = () => {
 };
 
 const SubFolders = ({ subData }) => {
+  const { setView } = useContext(viewContext);
+
+  const handleSubFolderClick = (label) => {
+    setView(label);
+  };
   return (
-    <ul>
+    <ul className="">
       {subData.map((items) => (
-        <li key={items.label} className={styles.PersonalInfoItems}>
+        <li
+          key={items.label}
+          className={styles.PersonalInfoItems}
+          onClick={() => handleSubFolderClick(items.label)}
+        >
           <img
             src={subFolder}
             alt={subFolder}
@@ -311,32 +348,38 @@ const SubFolders = ({ subData }) => {
 };
 export const todoTitle = createContext();
 export const reducerContext = createContext();
+export const viewContext = createContext();
 
 function About() {
   const [completTodos, setCompletedTodos] = useState([]);
   const [todos, dispatch] = useReducer(reducer, menuOptions);
+  const [view, setView] = useState("about-me");
 
-  const selectedOption = useContext(selectedOptionApi);
-
+  const { selectedOption } = useContext(selectedOptionApi);
 
   return (
-    <reducerContext.Provider value={{ todos, dispatch}}>
-    <todoTitle.Provider value={{ completTodos, setCompletedTodos }}>
-      <Row className={`${styles.container} `}>
-        <Col
-          className={`${styles.dashBoard} ${styles.defaultMargin}`}
-          md={{ span: "3" }}
-        >
-          {selectedOption === "_about-me" && <DashBoard />}
-          {selectedOption === "_projects" && <ProjectDashBoard />}
-        </Col>
-        <Col className={`${styles.dashBoardContent} ${styles.defaultMargin} `}>
-          {selectedOption === "_about-me" && <DashBoardContent />}
-          {selectedOption === "_projects" && <ProjectDashBoardCntent />}
-        </Col>
-      </Row>
-    </todoTitle.Provider>
-    </reducerContext.Provider>
+    <viewContext.Provider value={{ view, setView }}>
+      <reducerContext.Provider value={{ todos, dispatch }}>
+        <todoTitle.Provider value={{ completTodos, setCompletedTodos }}>
+          <Row className={`${styles.container} `}>
+            <Col
+              className={` ${styles.dashBoard} ${styles.defaultMargin}`}
+              md={{ span: "3" }}
+            >
+              {selectedOption === "_about-me" && <DashBoard />}
+              {selectedOption === "_projects" && <ProjectDashBoard />}
+              {selectedOption === "_contact-me" && <p>baa</p>}
+            </Col>
+            <Col
+              className={`${styles.dashBoardContent} ${styles.defaultMargin} `}
+            >
+              {selectedOption === "_about-me" && <DashBoardContent />}
+              {selectedOption === "_projects" && <ProjectDashBoardCntent />}
+            </Col>
+          </Row>
+        </todoTitle.Provider>
+      </reducerContext.Provider>
+    </viewContext.Provider>
   );
 }
 

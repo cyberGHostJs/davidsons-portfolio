@@ -29,9 +29,12 @@
   width: 24px;
   height: 24px;
 }
+.borderLeft {
+  border-left: 1px solid #1e2d3d !important;
+}
 .dashBoardMainContent {
   /* border: 1px solid green !important; */
-  border-right: 1px solid #1e2d3d;
+  /* border-right: 1px solid #1e2d3d; */
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -258,4 +261,71 @@
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
+}
+@media screen and (max-width: 949px) {
+  .SSNoDisplay {
+    display: none !important;
+  }
+  .dashBoard {
+    width: 100% !important;
+  }
+  .dashBoardMainContent {
+    width: 100% !important;
+    height: fit-content;
+  }
+  .dashBoardContentHeader {
+    height: 10vh;
+  }
+  .ssFullWidth {
+    width: 100% !important;
+  } 
+  .DashConDisplayContainer {
+    border-top: 1px solid #1e2d3d !important;
+
+  }
+  .DashConDisplayHeadCon {
+    height: 10vh;
+    /* display: none; */
+  }
+  .contentHalfcontainer {
+    padding: 0 !important;
+  }
+  .headtags {
+    border: none !important;
+    /* border: 1px solid black; */
+    margin-left: 5%;
+    align-items: center;
+  }
+  .body2Header {
+    margin-left: 5%;
+
+  }
+  /* .headtags img{
+    display: none;
+  } */
+  .snippetHead {
+    /* border: 1px solid green !important; */
+    width: 90%;
+    margin-inline: auto;
+
+  }
+  .detailsAndStarContainer {
+    /* border: 2px solid pink; */
+    width: fit-content;
+  }
+  .snippetContainer {
+    margin-inline: auto;
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  .snippetHead {
+    /* border: 1px solid green !important; */
+    width: 90%;
+  }
+  .snippetContainer {
+    width: 80%;
+    height: 60%;
+  }
 }

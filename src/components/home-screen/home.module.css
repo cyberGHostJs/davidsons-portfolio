@@ -6,6 +6,7 @@
   margin: 0 !important;
 }
 .homeContainerRow {
+  position: relative;
   border-radius: 8px;
   border: 1px solid #1e2d3d;
   background: #011627;
@@ -38,9 +39,95 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+/* Add a CSS transition for smooth sliding animation */
+.ssMenu2 {
+  position: relative;
+  top: 0;
+  left: -100%; /* Initially, slide the menu to the left */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.3s ease-in-out;
+}
+
+.ssMenu {
+  /* border: 1px solid green; */
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  padding: 0 !important;
+  /* left: -100%; */
+}
+
+/* Define a keyframe animation for sliding in from the left */
+@keyframes slideIn {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -120%;
+  }
+}
+
+/* Add a class to apply the slide-out animation */
+.slide-out {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+/* Define the slide-out class to hide the menu */
+.slideOut {
+  left: 0%; /* Slide the menu to the left to hide it */
+}
+
+
+
+/* Add a class to apply the animation */
+.slide-in {
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.ssMenu ul{
+  flex: 1;
+  /* border: 1px solid white; */
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+.ssMenu li{
+  /* border: 1px solid green; */
+  border-top: 1px solid #1E2D3D;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  font-family: "Fira Code";
+}
+.borderbottom {
+  border-bottom: 1px solid #1E2D3D;
+}
+.marginTopLi {
+  margin-top: 7vh;
+}
 @media screen and (max-width: 949px) {
   .bottomNav {
     display: none;
+  }
+  .ssMenu {
+    display: flex;
+    background: #011627 !important;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 520px) {

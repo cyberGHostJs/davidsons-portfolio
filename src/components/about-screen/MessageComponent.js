@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { aboutMessageData, codingMessageData, gamingMessageData, highSchoolMessageData, skatingMessageData, universityMessageData } from "../utils/Data"; // Import your message data
-import { viewContext } from "./About";
+import { viewContext } from "../home-screen/Home";
 
 const MessageComponent = () => {
   const maxLineLength = 38; // Maximum characters per line

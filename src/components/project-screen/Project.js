@@ -3,7 +3,7 @@ import styles from "./project.module.css";
 import { useContext, useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
-import { reducerContext, todoTitle } from "../about-screen/About";
+import { reducerContext, todoTitle } from "../home-screen/Home";
 import { profileData } from "../utils/Data";
 import { Link } from "react-router-dom";
 

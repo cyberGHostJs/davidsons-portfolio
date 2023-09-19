@@ -13,25 +13,17 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import { Col, Row } from "react-bootstrap";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   bio,
   codeSnippet,
   contactItems,
   education,
   interests,
-  menuOptions,
   navItems,
-  reducer,
 } from "../utils/Data";
 import MessageComponent from "./MessageComponent";
-import { selectedOptionApi } from "../home-screen/Home";
+import { selectedOptionApi, viewContext } from "../home-screen/Home";
 import {
   ProjectDashBoard,
   ProjectDashBoardCntent,
@@ -346,40 +338,25 @@ const SubFolders = ({ subData }) => {
     </ul>
   );
 };
-export const todoTitle = createContext();
-export const reducerContext = createContext();
-export const viewContext = createContext();
 
 function About() {
-  const [completTodos, setCompletedTodos] = useState([]);
-  const [todos, dispatch] = useReducer(reducer, menuOptions);
-  const [view, setView] = useState("about-me");
-
   const { selectedOption } = useContext(selectedOptionApi);
 
   return (
-    <viewContext.Provider value={{ view, setView }}>
-      <reducerContext.Provider value={{ todos, dispatch }}>
-        <todoTitle.Provider value={{ completTodos, setCompletedTodos }}>
-          <Row className={`${styles.container} `}>
-            <Col
-              className={` ${styles.dashBoard} ${styles.defaultMargin}`}
-              md={{ span: "3" }}
-            >
-              {selectedOption === "_about-me" && <DashBoard />}
-              {selectedOption === "_projects" && <ProjectDashBoard />}
-              {selectedOption === "_contact-me" && <p>baa</p>}
-            </Col>
-            <Col
-              className={`${styles.dashBoardContent} ${styles.defaultMargin} `}
-            >
-              {selectedOption === "_about-me" && <DashBoardContent />}
-              {selectedOption === "_projects" && <ProjectDashBoardCntent />}
-            </Col>
-          </Row>
-        </todoTitle.Provider>
-      </reducerContext.Provider>
-    </viewContext.Provider>
+    <Row className={`${styles.container} `}>
+      <Col
+        className={` ${styles.dashBoard} ${styles.defaultMargin}`}
+        md={{ span: "3" }}
+      >
+        {selectedOption === "_about-me" && <DashBoard />}
+        {selectedOption === "_projects" && <ProjectDashBoard />}
+        {selectedOption === "_contact-me" && <p>baa</p>}
+      </Col>
+      <Col className={`${styles.dashBoardContent} ${styles.defaultMargin} `}>
+        {selectedOption === "_about-me" && <DashBoardContent />}
+        {selectedOption === "_projects" && <ProjectDashBoardCntent />}
+      </Col>
+    </Row>
   );
 }
 

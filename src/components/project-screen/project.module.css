@@ -103,6 +103,7 @@
 /* ---- */
 .headerCover {
   /* border: 1px solid green; */
+  border-bottom: 1px solid #1e2d3d;
   height: 7%;
   display: flex;
   color: #607b96;
@@ -226,4 +227,52 @@
 .projectLink {
   text-decoration: none;
   color: #607B96;
+}
+.ssHeaders {
+  display: none;
+  padding-inline: 7%;
+  height: 7vh;
+  align-items: center;
+}
+.projectItemsList {
+  display: flex;
+  flex: 1;
+  margin-right: 2%;
+  border-right: 1px solid #1e2d3d;
+}
+
+@media screen and (max-width: 949px) {
+  .ssNoborder {
+    border: none !important;
+  }
+  
+  
+  .dashBoardContentHeader {
+    height: 4vh;
+    background: #1E2D3D;
+    margin-top: 1% !important;
+  }
+  .ssHeaders {
+    display: flex;
+  }
+  .headerCover {
+    margin-left: 10%;
+    height: 5vh;
+  }
+  
+}
+@media screen and (max-width: 699px) {
+  .profileCardContainer {
+    grid-template-columns: repeat(2, 1fr); /* 3 columns per row */
+    max-height: 69.5vh; /* Set a fixed maximum height */
+  }
+}
+@media screen and (max-width: 549px) {
+
+  .projectItemsList {
+    margin-right: 0%;
+  }
+  .profileCardContainer {
+    grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
+  }
 }

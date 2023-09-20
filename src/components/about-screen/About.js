@@ -40,19 +40,21 @@ const handleClick = (item, active, setActive) => {
 // DashBoardContent
 const DashBoardContent = () => {
   return (
-    <Row className={` ${styles.container} ${styles.borderLeft}`}>
+    <Row
+      className={` ${styles.container} ${styles.borderLeft} ${styles.ssFlex}  ${styles.ssNoBorder} `}
+    >
       <Col
         md={{ span: "6" }}
-        className={` ${styles.contentHeaderCol} ${styles.defaultMargin} ${styles.borderRight} ${styles.ssFullWidth}`}
+        className={` ${styles.contentHeaderCol} ${styles.defaultMargin} ${styles.borderRight} ${styles.ssFullWidth}  ${styles.ssNoBorder} `}
       >
         <DashBoardContentDisplay
-          headTags={<HeadTags text={"personal-info"} />}
+          headTags={<HeadTags text={""} />}
           detailedBody={<DetailedBody1 />}
         />
       </Col>
       <Col
         md={{ span: "6" }}
-        className={`${styles.defaultMargin} ${styles.ssFullWidth}`}
+        className={`${styles.defaultMargin} ${styles.ssFullWidth}  ${styles.ssNoBorder} `}
       >
         <DashBoardContentDisplay detailedBody={<DetailedBody2 />} />
       </Col>
@@ -61,16 +63,23 @@ const DashBoardContent = () => {
 };
 
 export const DashBoardContentDisplay = ({ headTags, detailedBody }) => {
+  const { view } = useContext(viewContext);
   return (
-    <div className={`${styles.DashConDisplayContainer} `}>
+    <div className={`${styles.DashConDisplayContainer} ${styles.ssNoBorder} `}>
       {/* content header */}
-      <div className={`${styles.DashConDisplayHeadCon} `}>
+      <div
+        className={`${styles.DashConDisplayHeadCon}  ${styles.ssNoBorder} ${
+          !headTags || view === "none" ? "" : styles.height10vh
+        } `}
+      >
         {headTags && headTags}
       </div>
       {/* content body */}
-      <div className={`${styles.contentHalfcontainer} `}>
-        <div className={`${styles.contentHalfItem} `}>
-          <div className={` ${styles.DetailedBody} `}>{detailedBody}</div>
+      <div className={`${styles.contentHalfcontainer} ${styles.ssNoBorder}`}>
+        <div className={`${styles.contentHalfItem}  ${styles.ssNoBorder} `}>
+          <div className={` ${styles.DetailedBody}  ${styles.ssNoBorder} `}>
+            {detailedBody}
+          </div>
         </div>
       </div>
     </div>
@@ -169,7 +178,7 @@ const HeadTags = ({ text }) => {
         ""
       ) : (
         <div className={`${styles.headtags}`}>
-          // {text} <span style={{ color: "#607B96" }}> / {view}</span>
+           {text} <span style={{ color: "#607B96" }}> / {view}</span>
           <img
             src={closeIcon}
             alt={closeIcon}
@@ -182,8 +191,9 @@ const HeadTags = ({ text }) => {
 };
 
 const DashBoard = () => {
-  const [showInfo, setShowInfo] = useState(true);
-  const [showContact, setShowContact] = useState(true);
+  const {selectedOption} = useContext(selectedOptionApi)
+  const [showInfo, setShowInfo] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   return (
     <Row className={`${styles.container} `}>
       <Col
@@ -200,6 +210,7 @@ const DashBoard = () => {
         className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "9" }}
       >
+        {<div className={styles.ssHeaders}>{selectedOption}</div>}
         <div className={` ${styles.container} `}>
           <div
             className={` ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}
@@ -343,7 +354,7 @@ function About() {
   const { selectedOption } = useContext(selectedOptionApi);
 
   return (
-    <Row className={`${styles.container} `}>
+    <Row className={`${styles.container} ${styles.ssFitContainer}`}>
       <Col
         className={` ${styles.dashBoard} ${styles.defaultMargin}`}
         md={{ span: "3" }}
@@ -352,7 +363,7 @@ function About() {
         {selectedOption === "_projects" && <ProjectDashBoard />}
         {selectedOption === "_contact-me" && <p>baa</p>}
       </Col>
-      <Col className={`${styles.dashBoardContent} ${styles.defaultMargin} `}>
+      <Col className={`${styles.dashBoardContent} ${styles.defaultMargin}  `}>
         {selectedOption === "_about-me" && <DashBoardContent />}
         {selectedOption === "_projects" && <ProjectDashBoardCntent />}
       </Col>

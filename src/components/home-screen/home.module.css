@@ -86,12 +86,6 @@
 .slide-out {
   animation: slideOut 0.3s ease-in-out forwards;
 }
-/* Define the slide-out class to hide the menu */
-.slideOut {
-  left: 0%; /* Slide the menu to the left to hide it */
-}
-
-
 
 /* Add a class to apply the animation */
 .slide-in {

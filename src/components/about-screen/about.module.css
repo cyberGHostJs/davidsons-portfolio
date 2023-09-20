@@ -8,7 +8,9 @@
   font-family: "Fira Code";
 }
 /* .dashBoard {
-}
+  border: 1px solid pink;
+} */
+/*
 .dashBoardContent {
 }
 .contentHeaderCol {
@@ -44,7 +46,7 @@
   height: 7%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #1e2d3d !important;
+  border-bottom: 1px solid #1e2d3d ;
 }
 .dashBoardContentHeader h5 {
   font-size: 16px !important;
@@ -262,11 +264,26 @@
   flex-direction: row !important;
   align-items: center !important;
 }
+.ssHeaders {
+  display: none;
+  padding-inline: 7%;
+  height: 7vh;
+  align-items: center;
+}
 @media screen and (max-width: 949px) {
   .SSNoDisplay {
     display: none !important;
   }
+  .ssNoBorder {
+    border: none !important;
+  }
+  .ssFitContainer {
+    display: flex !important;
+    flex-direction: column;
+    /* border: 3px solid pink; */
+  }
   .dashBoard {
+    /* height: fit-content; */
     width: 100% !important;
   }
   .dashBoardMainContent {
@@ -274,18 +291,24 @@
     height: fit-content;
   }
   .dashBoardContentHeader {
-    height: 10vh;
+    height: 4vh;
+    background: #1E2D3D;
+    margin-top: 1% !important;
+    /* border: 1px solid green !important; */
   }
   .ssFullWidth {
     width: 100% !important;
   } 
-  .DashConDisplayContainer {
+  /* .DashConDisplayContainer {
     border-top: 1px solid #1e2d3d !important;
 
-  }
+  } */
   .DashConDisplayHeadCon {
+    height: fit-content;
+  }
+  .height10vh {
     height: 10vh;
-    /* display: none; */
+    border: none !important;
   }
   .contentHalfcontainer {
     padding: 0 !important;
@@ -317,6 +340,18 @@
     margin-inline: auto;
     width: 92%;
   }
+  .DashConDisplayHeadCon {
+    border: none !important;
+  }
+  .borderRight {
+    border: none !important;
+  }
+  .ssHeaders {
+    display: flex;
+  }
+  /* .container {
+    min-height: fit-content !important;
+  } */
 }
 
 @media screen and (max-width: 635px) {

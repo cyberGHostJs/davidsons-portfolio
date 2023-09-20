@@ -3,7 +3,11 @@ import styles from "./project.module.css";
 import { useContext, useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
-import { reducerContext, todoTitle } from "../home-screen/Home";
+import {
+  reducerContext,
+  selectedOptionApi,
+  todoTitle,
+} from "../home-screen/Home";
 import { profileData } from "../utils/Data";
 import { Link } from "react-router-dom";
 
@@ -15,7 +19,7 @@ export const ProjectDashBoardCntent = () => {
     dispatch({ type: "RESET" });
   };
   return (
-    <Row className={`${styles.container} ${styles.borderLeft}`}>
+    <Row className={` ${styles.container} ${styles.borderLeft}`}>
       <Col
         md={{ span: "12" }}
         style={{ display: "flex" }}
@@ -30,25 +34,19 @@ export const ProjectDashBoardCntent = () => {
           }}
         >
           <div
-            className={styles.headerCover}
-            style={{ borderBottom: "1px solid #1e2d3d" }}
+            className={` ${styles.headerCover} ${styles.ssNoborder}`}
+            // style={{ borderBottom: "1px solid #1e2d3d" }}
           >
-            <div className={styles.header}>{`${completTodos}`}</div>
+            <div
+              className={`${styles.header} ${styles.ssNoborder}`}
+            >{`${completTodos}`}</div>
             {completTodos.length > 0 && (
-              <div className={styles.closeCover}>
+              <div className={`${styles.closeCover}  ${styles.ssNoborder}`}>
                 <img src={closeIcon} alt={closeIcon} onClick={handleReset} />
               </div>
             )}
           </div>
-          <div
-            className=""
-            style={{
-              display: "flex",
-              flex: "1",
-              marginRight: "2%",
-              borderRight: "1px solid #1e2d3d",
-            }}
-          >
+          <div className={`${styles.projectItemsList} ${styles.ssNoborder}`}>
             <div
               className={` ${styles.profileCardContainer}`}
               style={{ flex: "1" }}
@@ -73,7 +71,11 @@ const ProjectCard = ({ data }) => {
   return (
     <div className={` ${styles.profileCard}`}>
       <div className={styles.bgColor}>
-      <div className={`${data.tag.includes("React") ? styles.react : styles.vue}`}>
+        <div
+          className={`${
+            data.tag.includes("React") ? styles.react : styles.vue
+          }`}
+        >
           <img src={data.imgTag} alt={data.imgTag} />
         </div>
       </div>
@@ -92,6 +94,7 @@ export const ProjectDashBoard = () => {
   const [showInfo, setShowInfo] = useState(true);
   const { todos, dispatch } = useContext(reducerContext);
   const { setCompletedTodos } = useContext(todoTitle);
+  const { selectedOption } = useContext(selectedOptionApi);
 
   useEffect(() => {
     // Filter the todos where todo.complete is true and set it in the state
@@ -109,9 +112,10 @@ export const ProjectDashBoard = () => {
         className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "12" }}
       >
+        {<div className={styles.ssHeaders}>{selectedOption}</div>}
         <div className={` ${styles.container}`}>
           <div
-            className={`${styles.dashBoardContentHeader} ${styles.defaultMargin}`}
+            className={` ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}
             md={{ span: "12", offset: "" }}
             onClick={() => setShowInfo((prev) => !prev)}
           >

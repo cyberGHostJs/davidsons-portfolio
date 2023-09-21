@@ -28,6 +28,7 @@ import {
   ProjectDashBoard,
   ProjectDashBoardCntent,
 } from "../project-screen/Project";
+import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -192,7 +193,7 @@ const HeadTags = ({ text }) => {
 
 const DashBoard = () => {
   const {selectedOption} = useContext(selectedOptionApi)
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
   const [showContact, setShowContact] = useState(false);
   return (
     <Row className={`${styles.container} `}>
@@ -361,11 +362,12 @@ function About() {
       >
         {selectedOption === "_about-me" && <DashBoard />}
         {selectedOption === "_projects" && <ProjectDashBoard />}
-        {selectedOption === "_contact-me" && <p>baa</p>}
+        {selectedOption === "_contact-me" && <ContactDashboard />}
       </Col>
       <Col className={`${styles.dashBoardContent} ${styles.defaultMargin}  `}>
         {selectedOption === "_about-me" && <DashBoardContent />}
         {selectedOption === "_projects" && <ProjectDashBoardCntent />}
+        {selectedOption === "_contact-me" && <ContactDashboardContent />}
       </Col>
     </Row>
   );

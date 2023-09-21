@@ -20,7 +20,11 @@ export const navItems = [
 ];
 export const contactItems = [
   { label: "@gmail", img: mailIcon },
-  { label: "0808 517 6952", img: phoneIcon },
+  { label: "+2348085176952", img: phoneIcon },
+];
+export const otherContacts = [
+  { label: "Instagram", img: mailIcon },
+  { label: "Twitter", img: phoneIcon },
 ];
 
 export const bio = [{ label: "about-me" }];

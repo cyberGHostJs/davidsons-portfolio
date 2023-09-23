@@ -85,12 +85,14 @@
 
 /* Add a class to apply the slide-out animation */
 .slide-out {
-  animation: slideOut 0.3s ease-in-out forwards;
+  /* animation: slideOut 0.3s ease-in-out forwards; */
+  display: none !important;
 }
 
 /* Add a class to apply the animation */
 .slide-in {
-  animation: slideIn 0.3s ease-in-out forwards;
+  /* animation: slideIn 0.3s ease-in-out forwards; */
+  display: flex;
 }
 
 .ssMenu ul{

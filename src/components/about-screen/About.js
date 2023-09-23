@@ -29,7 +29,6 @@ import {
   ProjectDashBoardCntent,
 } from "../project-screen/Project";
 import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
-import { Body } from "../utils/Utils";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -361,7 +360,6 @@ function About() {
         className={` ${styles.dashBoard} ${styles.defaultMargin}`}
         md={{ span: "3" }}
       >
-        {selectedOption === "_hello" && <Body />}
         {selectedOption === "_about-me" && <DashBoard />}
         {selectedOption === "_projects" && <ProjectDashBoard />}
         {selectedOption === "_contact-me" && <ContactDashboard />}

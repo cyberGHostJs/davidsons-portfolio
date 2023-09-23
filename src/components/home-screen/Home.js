@@ -46,7 +46,7 @@ function Home() {
                   </Col>
                   <Col md="12" className={styles.body}>
                     {selectedOption === "_hello" ? (
-                      <About />
+                      <Body />
                     ) : (
                       <About/>
                     )}

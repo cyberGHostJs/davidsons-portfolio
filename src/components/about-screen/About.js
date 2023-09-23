@@ -360,6 +360,7 @@ function About() {
         className={` ${styles.dashBoard} ${styles.defaultMargin}`}
         md={{ span: "3" }}
       >
+        {selectedOption === "_hello" && <DashBoard />}
         {selectedOption === "_about-me" && <DashBoard />}
         {selectedOption === "_projects" && <ProjectDashBoard />}
         {selectedOption === "_contact-me" && <ContactDashboard />}

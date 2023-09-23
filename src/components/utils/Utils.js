@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useContext,
+  useMemo,
+} from "react";
 import { Col, Row } from "react-bootstrap";
 import menuIcon from "../home-screen/img/menuIcon.png";
 // import closeIcon from "../home-screen/img/closeIcon.png";
@@ -175,16 +181,16 @@ export const SnakeGame = () => {
 };
 
 // ------------------ TOP NAVIGATION ------------------------//
-export const TopNavigation = ({ setSelectedOption, selectedOption }) => {
-  return (
-    <Row className="TopNavigationContainer ">
-      <LogoAndMenuIcon />
-      <NavItems />
-      <ContactMe
-        selectedOption={selectedOption}
-        setSelectedOption={setSelectedOption}
-      />
-    </Row>
+export const TopNavigation = () => {
+  return useMemo(
+    () => (
+      <Row className="TopNavigationContainer ">
+        <LogoAndMenuIcon />
+        <NavItems />
+        <ContactMe />
+      </Row>
+    ),
+    []
   );
 };
 
@@ -230,7 +236,8 @@ const NavItems = () => {
 };
 
 // ContactMe
-const ContactMe = ({ selectedOption, setSelectedOption }) => {
+const ContactMe = () => {
+  const { selectedOption, setSelectedOption } = useContext(selectedOptionApi);
   return (
     <Col
       onClick={() => handleDefault("_contact-me", setSelectedOption)}

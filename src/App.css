@@ -96,3 +96,28 @@
     display: none !important;
    }
 }
+
+/* ---------------------- */
+.navitem_Ul{
+  flex: 1;
+  /* border: 1px solid white; */
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+.navitem_Ul li{
+  /* border: 1px solid green; */
+  border-top: 1px solid #1E2D3D;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  font-family: "Fira Code";
+}
+.navitem_Ul li:first-child{
+  margin-top: 7vh;
+}
+.navitem_Ul li:last-child{
+  border-bottom: 1px solid #1E2D3D;
+}
+/* ------------------------ */

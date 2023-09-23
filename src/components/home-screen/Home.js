@@ -4,6 +4,7 @@ import { createContext, useReducer, useState } from "react";
 import styles from "./home.module.css";
 import About from "../about-screen/About";
 import { menuOptions, reducer } from "../utils/Data";
+import SmallScreenMenu from "../utils/SmallScreenMenu";
 // import Project from "../project-screen/Project";
 // import { SnakeGame } from "../utils/Utils";
 
@@ -18,12 +19,7 @@ function Home() {
   const [completTodos, setCompletedTodos] = useState([]);
   const [todos, dispatch] = useReducer(reducer, menuOptions);
   const [view, setView] = useState("about-me");
-  const [show, setShow] = useState(false);
-
-  const handleClick = (label) => {
-    setShow(false);
-    setSelectedOption(label);
-  };
+  const [show, setShow] = useState(null);
 
   const [selectedOption, setSelectedOption] = useState("_hello");
   return (
@@ -42,58 +38,18 @@ function Home() {
                         show ? styles["slide-in"] : styles["slide-out"]
                       }`}
                     >
-                      <ul>
-                        <li
-                          className={`${styles.marginTopLi} ${
-                            selectedOption === "_hello" ? "currentItem" : ""
-                          }`}
-                          onClick={() => handleClick("_hello")}
-                        >
-                          _hello
-                        </li>
-                        <li
-                          onClick={() => handleClick("_about-me")}
-                          className={`${
-                            selectedOption === "_about-me" ? "currentItem" : ""
-                          }`}
-                        >
-                          _about-me
-                        </li>
-                        <li
-                          onClick={() => handleClick("_projects")}
-                          className={`${
-                            selectedOption === "_projects" ? "currentItem" : ""
-                          }`}
-                        >
-                          _projects
-                        </li>
-                        <li
-                          onClick={() => handleClick("_contact-me")}
-                          className={`${styles.borderbottom} ${
-                            selectedOption === "_contact-me" ? "currentItem" : ""
-                          }`}
-                        >
-                          _contact-me
-                        </li>
-                      </ul>
-
-                      <li>two</li>
+                      <SmallScreenMenu />
                     </div>
                   }
                   <Col md="12" className={`${styles.topNav} `}>
-                    <TopNavigation
-                      setSelectedOption={setSelectedOption}
-                      selectedOption={selectedOption}
-                    />
+                    <TopNavigation />
                   </Col>
                   <Col md="12" className={styles.body}>
-                    {selectedOption === "_hello" && <Body />}
-                    {selectedOption !== "_hello" && (
-                      // change naming here since it desnt contain just about
+                    {selectedOption === "_hello" ? (
+                      <Body />
+                    ) : (
                       <About selectedOption={selectedOption} />
                     )}
-                    {/* { selectedOption === "_projects" && <Project/>} */}
-                    {/* { selectedOption === "_contact-me" && <p>_contact-me</p>} */}
                   </Col>
                   <Col md="12" className={styles.bottomNav}>
                     <BottomNavigation />

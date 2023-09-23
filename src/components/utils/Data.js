@@ -13,6 +13,13 @@ import project3 from "../project-screen/img/project3.png";
 import vueTag from "../project-screen/img/vueTag.png";
 import reactTag from "../project-screen/img/reactTag.png";
 
+// used in mobile device menu
+export const MainNavMenuItems = [
+  { label: "_hello" },
+  { label: "_about-me" },
+  { label: "_projects" },
+  { label: "_contact-me" },
+];
 export const navItems = [
   { label: "bio", img: file1 },
   { label: "interests", img: file2 },

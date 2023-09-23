@@ -24,11 +24,6 @@ import {
 } from "../utils/Data";
 import MessageComponent from "./MessageComponent";
 import { selectedOptionApi, viewContext } from "../home-screen/Home";
-import {
-  ProjectDashBoard,
-  ProjectDashBoardCntent,
-} from "../project-screen/Project";
-import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -39,7 +34,7 @@ const handleClick = (item, active, setActive) => {
 };
 
 // DashBoardContent
-const DashBoardContent = () => {
+export const DashBoardContent = () => {
   return (
     <Row
       className={` ${styles.container} ${styles.borderLeft} ${styles.ssFlex}  ${styles.ssNoBorder} `}
@@ -179,7 +174,7 @@ const HeadTags = ({ text }) => {
         ""
       ) : (
         <div className={`${styles.headtags}`}>
-           {text} <span style={{ color: "#607B96" }}> / {view}</span>
+          {text} <span style={{ color: "#607B96" }}> / {view}</span>
           <img
             src={closeIcon}
             alt={closeIcon}
@@ -191,8 +186,8 @@ const HeadTags = ({ text }) => {
   );
 };
 
-const DashBoard = () => {
-  const {selectedOption} = useContext(selectedOptionApi)
+export const DashBoard = () => {
+  const { selectedOption } = useContext(selectedOptionApi);
   const [showInfo, setShowInfo] = useState(false);
   const [showContact, setShowContact] = useState(false);
   return (
@@ -351,8 +346,7 @@ const SubFolders = ({ subData }) => {
   );
 };
 
-function About() {
-  const { selectedOption } = useContext(selectedOptionApi);
+function About({ dashBoard, dashBoardContent }) {
 
   return (
     <Row className={`${styles.container} ${styles.ssFitContainer}`}>
@@ -360,14 +354,10 @@ function About() {
         className={` ${styles.dashBoard} ${styles.defaultMargin}`}
         md={{ span: "3" }}
       >
-        {selectedOption === "_about-me" && <DashBoard />}
-        {selectedOption === "_projects" && <ProjectDashBoard />}
-        {selectedOption === "_contact-me" && <ContactDashboard />}
+        {dashBoard}
       </Col>
       <Col className={`${styles.dashBoardContent} ${styles.defaultMargin}  `}>
-        {selectedOption === "_about-me" && <DashBoardContent />}
-        {selectedOption === "_projects" && <ProjectDashBoardCntent />}
-        {selectedOption === "_contact-me" && <ContactDashboardContent />}
+        {dashBoardContent}
       </Col>
     </Row>
   );

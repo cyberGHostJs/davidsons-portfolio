@@ -23,12 +23,13 @@ import {
   navItems,
 } from "../utils/Data";
 import MessageComponent from "./MessageComponent";
-import { selectedOptionApi, viewContext } from "../home-screen/Home";
+import { viewContext } from "../home-screen/Home";
 import {
   ProjectDashBoard,
   ProjectDashBoardCntent,
 } from "../project-screen/Project";
 import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
+import { selectedOptionApi } from "../../App";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -193,7 +194,7 @@ const HeadTags = ({ text }) => {
 
 const DashBoard = () => {
   const {selectedOption} = useContext(selectedOptionApi)
-  const [showInfo, setShowInfo] = useState(true);
+  const [showInfo, setShowInfo] = useState(false);
   const [showContact, setShowContact] = useState(false);
   return (
     <Row className={`${styles.container} `}>

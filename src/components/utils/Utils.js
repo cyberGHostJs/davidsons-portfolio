@@ -12,7 +12,8 @@ import github from "../home-screen/img/github.png";
 import bolt from "../home-screen/img/bolt-up-right.png";
 import boltDwnL from "../home-screen/img/bolt-down-left.png";
 import boltDnwR from "../home-screen/img/bolt-down-right.png";
-import { selectedOptionApi, showApi } from "../home-screen/Home";
+import { selectedOptionApi, showApi } from "../../App";
+// import { selectedOptionApi, showApi } from "../home-screen/Home";
 // import SnakeFood1 from "../home-screen/img/SnakeFood1.png";
 
 // snake game constants

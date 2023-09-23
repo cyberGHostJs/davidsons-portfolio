@@ -131,7 +131,6 @@
 .form textarea::placeholder {
   color: #465e77 !important;
   font-size: 14px;
-
 }
 .form input {
   width: 100%;
@@ -164,39 +163,92 @@
   cursor: pointer;
 }
 
-
 .successPage button {
-    border: none;
-    display: inline-flex;
-    padding: 10px 14px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    background: #1c2b3a;
-    color: #fff;
-    font-weight: 450;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .successPage p{
+  border: none;
+  display: inline-flex;
+  padding: 10px 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #1c2b3a;
+  color: #fff;
+  font-weight: 450;
+  font-size: 14px;
+  cursor: pointer;
+}
+.successPage p {
   color: #465e77 !important;
+}
+.contactSectionsContainer{
+  flex: 1;
+  display: flex;
+  margin-right: 2%;
+}
+.contactFormContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formCodeSnippet {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formCoverDiv {
+  width: 65%;
+  height: 80%;
+  font-size: 14px;
+}
+.ssHeaders {
+  display: none;
+  padding-inline: 7%;
+  height: 7vh;
+  align-items: center;
+}
 
-  }
-
-
-
-
-
-
-
-
+/* ---------------------------- */
 
 .constClr {
-    color: #C98BDF !important;
+  color: #c98bdf !important;
 }
 .variableClr {
-    color: #5565E8 !important;
+  color: #5565e8 !important;
 }
 .stringClr {
-    color: #FEA55F !important;
+  color: #fea55f !important;
+}
+@media screen and (max-width: 949px) {
+  .contactSectionsContainer{
+    /* flex-direction: column; */
+    margin-right: 0% !important;
+    border: none !important;
+  }
+  .contactFormContainer {
+    /* width: 100% !important; */
+    height: fit-content;
+    border: none !important;
+  }
+  /* .formCodeSnippet {
+  } */
+  .formCoverDiv {
+    height: 100% !important;
+    margin: 7% auto;
+    /* border: 2px solid pink; */
+  }
+  .dashBoardContentHeader {
+    height: 4vh;
+    background: #1E2D3D;
+    margin-top: 1% !important;
+  }
+
+  .ssHeaders {
+    display: flex;
+  }
+}
+@media screen and (max-width: 480px) {
+  .formCoverDiv {
+    width: 80% !important;
+  }
 }

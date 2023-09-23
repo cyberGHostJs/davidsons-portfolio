@@ -23,13 +23,12 @@ import {
   navItems,
 } from "../utils/Data";
 import MessageComponent from "./MessageComponent";
-import { viewContext } from "../home-screen/Home";
+import { selectedOptionApi, viewContext } from "../home-screen/Home";
 import {
   ProjectDashBoard,
   ProjectDashBoardCntent,
 } from "../project-screen/Project";
 import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
-import { selectedOptionApi } from "../../App";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {

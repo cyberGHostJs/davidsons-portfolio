@@ -5,12 +5,11 @@ import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
 import {
   reducerContext,
-  // selectedOptionApi,
+  selectedOptionApi,
   todoTitle,
 } from "../home-screen/Home";
 import { profileData } from "../utils/Data";
 import { Link } from "react-router-dom";
-import { selectedOptionApi } from "../../App";
 
 export const ProjectDashBoardCntent = () => {
   const { completTodos } = useContext(todoTitle);

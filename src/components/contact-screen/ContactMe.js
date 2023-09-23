@@ -8,8 +8,7 @@ import { contactItems, otherContacts } from "../utils/Data";
 // import phoneIcon from "../about-screen/img/phone-icon.png"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"; // You can choose a different style
-import { selectedOptionApi } from "../../App";
-// import { selectedOptionApi } from "../home-screen/Home";
+import { selectedOptionApi } from "../home-screen/Home";
 
 // ContactDashboard DASHBOARD
 export const ContactDashboard = () => {

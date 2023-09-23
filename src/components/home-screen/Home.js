@@ -1,15 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Body, BottomNavigation, TopNavigation } from "../utils/Utils";
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 import styles from "./home.module.css";
 import About from "../about-screen/About";
 import { menuOptions, reducer } from "../utils/Data";
-import { selectedOptionApi, showApi } from "../../App";
 // import Project from "../project-screen/Project";
 // import { SnakeGame } from "../utils/Utils";
 
-// export const selectedOptionApi = createContext();
-// export const showApi = createContext();
+export const selectedOptionApi = createContext();
+export const showApi = createContext();
 
 export const todoTitle = createContext();
 export const reducerContext = createContext();
@@ -19,73 +18,67 @@ function Home() {
   const [completTodos, setCompletedTodos] = useState([]);
   const [todos, dispatch] = useReducer(reducer, menuOptions);
   const [view, setView] = useState("about-me");
-  const {show} = useContext(showApi)
-  const {selectedOption, setSelectedOption} = useContext(selectedOptionApi)
-  // const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
+  const handleClick = (label) => {
+    setShow(false);
+    setSelectedOption(label);
+  };
 
-
-  // const handleClick = (label) => {
-  //   setShow(false);
-  //   setSelectedOption(label);
-  // };
-
-  // const [selectedOption, setSelectedOption] = useState("_hello");
+  const [selectedOption, setSelectedOption] = useState("_hello");
   return (
     <viewContext.Provider value={{ view, setView }}>
       <reducerContext.Provider value={{ todos, dispatch }}>
         <todoTitle.Provider value={{ completTodos, setCompletedTodos }}>
-          {/* <showApi.Provider value={{ setShow }}> */}
-            {/* <selectedOptionApi.Provider
+          <showApi.Provider value={{ setShow }}>
+            <selectedOptionApi.Provider
               value={{ selectedOption, setSelectedOption }}
-            > */}
+            >
               <Container fluid className={styles.homeContainer}>
                 <Row className={`${styles.homeContainerRow}`}>
                   {
-                    // <div
-                    //   className={`${styles.ssMenu} ${
-                    //     show ? styles["slide-in"] : styles["slide-out"]
-                    //   }`}
-                    // >
-                    //   <ul>
-                    //     <li
-                    //       className={`${styles.marginTopLi} ${
-                    //         selectedOption === "_hello" ? "currentItem" : ""
-                    //       }`}
-                    //       onClick={() => handleClick("_hello")}
-                    //     >
-                    //       _hello
-                    //     </li>
-                    //     <li
-                    //       onClick={() => handleClick("_about-me")}
-                    //       className={`${
-                    //         selectedOption === "_about-me" ? "currentItem" : ""
-                    //       }`}
-                    //     >
-                    //       _about-me
-                    //     </li>
-                    //     <li
-                    //       onClick={() => handleClick("_projects")}
-                    //       className={`${
-                    //         selectedOption === "_projects" ? "currentItem" : ""
-                    //       }`}
-                    //     >
-                    //       _projects
-                    //     </li>
-                    //     <li
-                    //       onClick={() => handleClick("_contact-me")}
-                    //       className={`${styles.borderbottom} ${
-                    //         selectedOption === "_contact-me"
-                    //           ? "currentItem"
-                    //           : ""
-                    //       }`}
-                    //     >
-                    //       _contact-me
-                    //     </li>
-                    //   </ul>
+                    <div
+                      className={`${styles.ssMenu} ${
+                        show ? styles["slide-in"] : styles["slide-out"]
+                      }`}
+                    >
+                      <ul>
+                        <li
+                          className={`${styles.marginTopLi} ${
+                            selectedOption === "_hello" ? "currentItem" : ""
+                          }`}
+                          onClick={() => handleClick("_hello")}
+                        >
+                          _hello
+                        </li>
+                        <li
+                          onClick={() => handleClick("_about-me")}
+                          className={`${
+                            selectedOption === "_about-me" ? "currentItem" : ""
+                          }`}
+                        >
+                          _about-me
+                        </li>
+                        <li
+                          onClick={() => handleClick("_projects")}
+                          className={`${
+                            selectedOption === "_projects" ? "currentItem" : ""
+                          }`}
+                        >
+                          _projects
+                        </li>
+                        <li
+                          onClick={() => handleClick("_contact-me")}
+                          className={`${styles.borderbottom} ${
+                            selectedOption === "_contact-me" ? "currentItem" : ""
+                          }`}
+                        >
+                          _contact-me
+                        </li>
+                      </ul>
 
-                    //   <li>two</li>
-                    // </div>
+                      <li>two</li>
+                    </div>
                   }
                   <Col md="12" className={`${styles.topNav} `}>
                     <TopNavigation
@@ -107,8 +100,8 @@ function Home() {
                   </Col>
                 </Row>
               </Container>
-            {/* </selectedOptionApi.Provider> */}
-          {/* </showApi.Provider> */}
+            </selectedOptionApi.Provider>
+          </showApi.Provider>
         </todoTitle.Provider>
       </reducerContext.Provider>
     </viewContext.Provider>

@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import styles from "./contactme.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
 import { contactItems, otherContacts } from "../utils/Data";
@@ -8,7 +8,7 @@ import { contactItems, otherContacts } from "../utils/Data";
 // import phoneIcon from "../about-screen/img/phone-icon.png"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"; // You can choose a different style
-import { selectedOptionApi } from "../home-screen/Home";
+import { SmallScreenHeader } from "../utils/Utils";
 
 // ContactDashboard DASHBOARD
 export const ContactDashboard = () => {
@@ -16,15 +16,13 @@ export const ContactDashboard = () => {
     contact: false,
     others: false,
   });
-const {selectedOption} = useContext(selectedOptionApi)
   return (
     <Row className={` ${styles.container} `}>
       <Col
         className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "12" }}
       >
-        {<div className={styles.ssHeaders}>{selectedOption}</div>}
-
+        <SmallScreenHeader />
         <div className={` ${styles.container} ssNoBorder`}>
           <div
             className={`ssNoBorder ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}

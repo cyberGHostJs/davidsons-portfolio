@@ -29,6 +29,7 @@ import {
   ProjectDashBoardCntent,
 } from "../project-screen/Project";
 import { ContactDashboard, ContactDashboardContent } from "../contact-screen/ContactMe";
+import { EmptySelection, SmallScreenHeader } from "../utils/Utils";
 
 const handleClick = (item, active, setActive) => {
   if (active === item) {
@@ -92,7 +93,7 @@ const DetailedBody1 = () => {
   return (
     <>
       {view === "none" ? (
-        "open folder and select a file to view"
+        <EmptySelection />
       ) : (
         <MessageComponent />
       )}
@@ -192,7 +193,6 @@ const HeadTags = ({ text }) => {
 };
 
 const DashBoard = () => {
-  const {selectedOption} = useContext(selectedOptionApi)
   const [showInfo, setShowInfo] = useState(false);
   const [showContact, setShowContact] = useState(false);
   return (
@@ -211,7 +211,7 @@ const DashBoard = () => {
         className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "9" }}
       >
-        {<div className={styles.ssHeaders}>{selectedOption}</div>}
+        <SmallScreenHeader />
         <div className={` ${styles.container} `}>
           <div
             className={` ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}

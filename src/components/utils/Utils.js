@@ -461,3 +461,32 @@ const GithubUserName = () => {
     </Col>
   );
 };
+export const EmptySelection = () => {
+  return (
+    <div
+      className=""
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+        width: '90%',
+        margin: '0 auto',
+        textAlign: 'center'
+      }}
+    >
+      open folder and select a file to view
+    </div>
+  );
+};
+export const handleFolderClick = (item, active, setActive) => {
+  if (active === item) {
+    setActive("");
+  } else {
+    setActive(item);
+  }
+};
+export const SmallScreenHeader = () => {
+  const { selectedOption } = useContext(selectedOptionApi);
+  return <div className={`ssHeaders`}>{selectedOption}</div>;
+};

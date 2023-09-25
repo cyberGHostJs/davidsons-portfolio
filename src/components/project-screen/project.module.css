@@ -228,12 +228,6 @@
   text-decoration: none;
   color: #607B96;
 }
-.ssHeaders {
-  display: none;
-  padding-inline: 7%;
-  height: 7vh;
-  align-items: center;
-}
 .projectItemsList {
   display: flex;
   flex: 1;
@@ -251,9 +245,6 @@
     height: 4vh;
     background: #1E2D3D;
     margin-top: 1% !important;
-  }
-  .ssHeaders {
-    display: flex;
   }
   .headerCover {
     margin-left: 10%;

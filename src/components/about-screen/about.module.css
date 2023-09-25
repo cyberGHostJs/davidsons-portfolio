@@ -264,12 +264,7 @@
   flex-direction: row !important;
   align-items: center !important;
 }
-.ssHeaders {
-  display: none;
-  padding-inline: 7%;
-  height: 7vh;
-  align-items: center;
-}
+
 @media screen and (max-width: 949px) {
   .SSNoDisplay {
     display: none !important;
@@ -345,9 +340,6 @@
   }
   .borderRight {
     border: none !important;
-  }
-  .ssHeaders {
-    display: flex;
   }
   /* .container {
     min-height: fit-content !important;

@@ -3,13 +3,10 @@ import styles from "./project.module.css";
 import { useContext, useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
-import {
-  reducerContext,
-  selectedOptionApi,
-  todoTitle,
-} from "../home-screen/Home";
+import { reducerContext, todoTitle } from "../home-screen/Home";
 import { profileData } from "../utils/Data";
 import { Link } from "react-router-dom";
+import { SmallScreenHeader } from "../utils/Utils";
 
 export const ProjectDashBoardCntent = () => {
   const { completTodos } = useContext(todoTitle);
@@ -30,13 +27,9 @@ export const ProjectDashBoardCntent = () => {
             flex: "1",
             display: "flex",
             flexDirection: "column",
-            // border: "1px solid blue",
           }}
         >
-          <div
-            className={` ${styles.headerCover} ${styles.ssNoborder}`}
-            // style={{ borderBottom: "1px solid #1e2d3d" }}
-          >
+          <div className={` ${styles.headerCover} ${styles.ssNoborder}`}>
             <div
               className={`${styles.header} ${styles.ssNoborder}`}
             >{`${completTodos}`}</div>
@@ -46,7 +39,7 @@ export const ProjectDashBoardCntent = () => {
               </div>
             )}
           </div>
-          
+
           <div className={`${styles.projectItemsList} ${styles.ssNoborder}`}>
             <div
               className={` ${styles.profileCardContainer}`}
@@ -95,7 +88,6 @@ export const ProjectDashBoard = () => {
   const [showInfo, setShowInfo] = useState(false);
   const { todos, dispatch } = useContext(reducerContext);
   const { setCompletedTodos } = useContext(todoTitle);
-  const { selectedOption } = useContext(selectedOptionApi);
 
   useEffect(() => {
     // Filter the todos where todo.complete is true and set it in the state
@@ -113,7 +105,7 @@ export const ProjectDashBoard = () => {
         className={` ${styles.dashBoardMainContent} ${styles.defaultMargin} `}
         md={{ span: "12" }}
       >
-        {<div className={styles.ssHeaders}>{selectedOption}</div>}
+        <SmallScreenHeader />
         <div className={` ${styles.container}`}>
           <div
             className={` ${styles.dashBoardContentHeader} ${styles.defaultMargin}`}

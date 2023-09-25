@@ -9,6 +9,12 @@
 .currentItem{
   color: #fff !important;
 }
+.ssHeaders {
+  display: none;
+  padding-inline: 7%;
+  height: 7vh;
+  align-items: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -77,6 +83,9 @@
   width: 85%;
 }
 @media screen and (max-width: 949px) {
+  .ssHeaders {
+    display: flex;
+  }
   .ssNoDisplay {
    display: none !important;
   }

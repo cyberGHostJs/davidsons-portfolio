@@ -6,8 +6,8 @@ import { MainNavMenuItems } from "./Data";
 const SmallScreenMenu = () => {
   const { setShow } = useContext(showApi);
   const { selectedOption, setSelectedOption } = useContext(selectedOptionApi);
-console.log("child");
-  const handleClick = (label) => {
+
+  const handleMenuClick = (label) => {
     setShow(false);
     setSelectedOption(label);
   };
@@ -18,7 +18,7 @@ console.log("child");
           <li
             key={item.label}
             className={`${selectedOption === item.label ? "currentItem" : ""}`}
-            onClick={() => handleClick(item.label)}
+            onClick={() => handleMenuClick(item.label)}
           >
             {item.label}
           </li>

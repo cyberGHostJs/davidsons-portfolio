@@ -32,7 +32,7 @@ export const ProjectDashBoardCntent = () => {
           <div className={` ${styles.headerCover} ${styles.ssNoborder}`}>
             <div
               className={`${styles.header} ${styles.ssNoborder}`}
-            >{`${completTodos}`}</div>
+            >{`${completTodos}`} {completTodos < 1 ? '// projects / all': ''}</div>
             {completTodos.length > 0 && (
               <div className={`${styles.closeCover}  ${styles.ssNoborder}`}>
                 <img src={closeIcon} alt={closeIcon} onClick={handleReset} />
@@ -63,6 +63,8 @@ export const ProjectDashBoardCntent = () => {
 
 const ProjectCard = ({ data }) => {
   return (
+    <div>
+      <h5 className={styles.projectHead}><span>project {data.id}</span>//_{data.name}</h5>
     <div className={` ${styles.profileCard}`}>
       <div className={styles.bgColor}>
         <div
@@ -80,6 +82,7 @@ const ProjectCard = ({ data }) => {
           view-project
         </Link>
       </button>
+    </div>
     </div>
   );
 };

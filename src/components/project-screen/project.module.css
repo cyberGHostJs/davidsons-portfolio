@@ -210,18 +210,27 @@
   border-radius: 0 !important;
 }
 
+.projectHead {
+  width: 90%;
+  margin: 0% auto;
+  font-size: 16px;
+  color: #607B96;
+  font-weight: 450;
+}
+.projectHead span:first-child{
+  color: #5565E8;
+  font-weight: 700;
+}
 
 /* Define styles for grid layout (3 columns per row) */
 .profileCardContainer {
   margin: 0 !important;
   padding: 3%;
-  /* margin-right: 2% !important; */
-  /* border-top: 1px solid #1e2d3d !important; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-  gap: 20px; /* Gap between cards */
-  max-height: 73vh; /* Set a fixed maximum height */
-  overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-height: 73vh;
+  overflow-y: auto;
   
 }
 .projectLink {
@@ -239,23 +248,25 @@
   .ssNoborder {
     border: none !important;
   }
-  
-  
   .dashBoardContentHeader {
     height: 4vh;
     background: #1E2D3D;
     margin-top: 1% !important;
   }
   .headerCover {
-    margin-left: 10%;
-    height: 5vh;
+    margin-left: 8%;
+    height: 7vh;
+  }
+  .profileCardContainer {
+    max-height: fit-content;
+    overflow-y:visible ;
   }
   
 }
 @media screen and (max-width: 699px) {
   .profileCardContainer {
-    grid-template-columns: repeat(2, 1fr); /* 3 columns per row */
-    max-height: 69.5vh; /* Set a fixed maximum height */
+    grid-template-columns: repeat(2, 1fr);
+    /* max-height: 69.5vh; */
   }
 }
 @media screen and (max-width: 549px) {

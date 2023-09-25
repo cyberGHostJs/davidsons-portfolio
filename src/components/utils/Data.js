@@ -126,7 +126,7 @@ export const menuOptions = [
 export const profileData = [
   {
     id: 1,
-    name: "John Doe",
+    name: "MovFlix",
     image: project1,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
     link: "https://movies-watch-list.vercel.app/",
@@ -135,7 +135,7 @@ export const profileData = [
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Care-Pro",
     image: project2,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
     link: "https://care-pro.vercel.app/login",
@@ -144,7 +144,7 @@ export const profileData = [
   },
   {
     id: 3,
-    name: "Alice Johnson",
+    name: "Api Vault",
     image: project3,
     description: "Duis aute irure dolor in velit esse cillum dolore.",
     link: "https://apivault.dev/",

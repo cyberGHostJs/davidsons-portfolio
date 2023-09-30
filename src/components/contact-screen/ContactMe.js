@@ -9,6 +9,7 @@ import { contactItems, otherContacts } from "../utils/Data";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism"; // You can choose a different style
 import { SmallScreenHeader } from "../utils/Utils";
+import { Link } from "react-router-dom";
 
 // ContactDashboard DASHBOARD
 export const ContactDashboard = () => {
@@ -77,12 +78,23 @@ export const ContactDashboard = () => {
             >
               <ul>
                 {otherContacts.map((item) => (
-                  <li key={item.label}>
-                    <div className={` ${styles.navItems}`}>
-                      <img src={item.img} alt={item.img} />
-                      {item.label}
-                    </div>
-                  </li>
+                  <Link
+                  key={item.label}
+                    to={item.link}
+                    target="_blank"
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <li>
+                      <div className={` ${styles.navItems}`}>
+                        <img src={item.img} alt={item.img} />
+                        {item.label}
+                      </div>
+                    </li>
+                  </Link>
                 ))}
               </ul>
             </div>

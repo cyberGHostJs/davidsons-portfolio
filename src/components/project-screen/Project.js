@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import styles from "./project.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
 import closeIcon from "../home-screen/img/closeIcon.png";
 import { reducerContext, todoTitle } from "../home-screen/Home";
@@ -12,9 +12,9 @@ export const ProjectDashBoardCntent = () => {
   const { completTodos } = useContext(todoTitle);
   const { dispatch } = useContext(reducerContext);
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     dispatch({ type: "RESET" });
-  };
+  },[dispatch])
   return (
     <Row className={` ${styles.container} ${styles.borderLeft}`}>
       <Col

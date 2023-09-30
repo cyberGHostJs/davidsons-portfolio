@@ -19,6 +19,7 @@ import bolt from "../home-screen/img/bolt-up-right.png";
 import boltDwnL from "../home-screen/img/bolt-down-left.png";
 import boltDnwR from "../home-screen/img/bolt-down-right.png";
 import { selectedOptionApi, showApi } from "../home-screen/Home";
+import { Link } from "react-router-dom";
 // import SnakeFood1 from "../home-screen/img/SnakeFood1.png";
 
 // snake game constants
@@ -299,7 +300,7 @@ const HeroInfo = () => {
       <p className="gitHubLinkCover">
         <span className="const">const</span>
         <span className="github"> githubLink</span> =
-        <span className="link">“https://github.com/cyberGHostJs”</span>
+        <Link target="_blank" to="https://github.com/cyberGHostJs" style={{ textDecoration: 'none'}}><span className="link">“https://github.com/cyberGHostJs”</span></Link>
       </p>
     </div>
   );
@@ -425,15 +426,26 @@ const FindMeSocial = () => {
           <h5 className="findMe">find me in:</h5>
         </div>
         <div className="socialLogoContainer">
-          <img
-            src={twitter}
-            alt={twitter}
-            width="23px"
-            height="23px"
-            className="img"
-          />
+          <Link
+          target="_blank"
+            style={{ margin: "0", padding: "0", textDecoration: "none" }}
+            to="https://twitter.com/ghst79?s=21&t=MGM86TXryQgnjlw9gzKqJA"
+          >
+            <img
+              src={twitter}
+              alt={twitter}
+              width="23px"
+              height="23px"
+              className="img"
+            />
+          </Link>
         </div>
         <div className="socialLogoContainer">
+        <Link
+          target="_blank"
+            style={{ margin: "0", padding: "0", textDecoration: "none" }}
+            to="https://twitter.com/ghst79?s=21&t=MGM86TXryQgnjlw9gzKqJA"
+          >
           <img
             src={facebook}
             alt={facebook}
@@ -441,6 +453,7 @@ const FindMeSocial = () => {
             height="23px"
             className="img"
           />
+          </Link>
         </div>
       </div>
     </Col>
@@ -455,7 +468,9 @@ const GithubUserName = () => {
       className="BottomNavigationContainerCol2"
     >
       <div className="">
+        <Link target="_blank" to="https://github.com/cyberGHostJs" style={{ textDecoration: 'none'}}>
         <h5 className="findMe ">@cyberGHostJs</h5>
+        </Link>
         <img src={github} alt={github} className="img" />
       </div>
     </Col>
@@ -470,9 +485,9 @@ export const EmptySelection = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
-        width: '90%',
-        margin: '0 auto',
-        textAlign: 'center'
+        width: "90%",
+        margin: "0 auto",
+        textAlign: "center",
       }}
     >
       open folder and select a file to view

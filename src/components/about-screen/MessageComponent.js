@@ -9,11 +9,11 @@ const MessageComponent = () => {
   useEffect(()=>{
     if (view === 'about-me'){
       setMessageDisplayed(aboutMessageData)
-    } else if (view === 'coding'){
+    } else if (view === 'Challenges'){
       setMessageDisplayed(codingMessageData)
-    }else if (view === 'gaming'){
+    }else if (view === 'Blogging'){
       setMessageDisplayed(gamingMessageData)
-    }else if (view === 'skating'){
+    }else if (view === 'React'){
       setMessageDisplayed(skatingMessageData)
     }else if (view === 'high-school'){
       setMessageDisplayed(highSchoolMessageData)
@@ -39,7 +39,7 @@ const MessageComponent = () => {
 
       if (remainingText.length > 0) {
         if (!remainingText.includes('/**') && !remainingText.includes('**/')) {
-          // Check if the line doesn't start with '**' or '*/'
+          // Check if the line doesn't start with '/**' or '**/'
           lines.push(`* ${remainingText}`);
         } else {
           lines.push(remainingText); // Keep the line as is

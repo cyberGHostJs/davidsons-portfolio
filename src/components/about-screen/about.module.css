@@ -341,6 +341,11 @@
   .borderRight {
     border: none !important;
   }
+  .DetailedBody {
+    max-height: fit-content;
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
   /* .container {
     min-height: fit-content !important;
   } */

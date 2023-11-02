@@ -77,7 +77,7 @@ const ProjectCard = ({ data }) => {
       </div>
       <img src={data.image} alt={data.name} />
       <p>{data.description}</p>
-      <button className="">
+      <button className="" style={{ marginBottom: '5%'}}>
         <Link className={styles.projectLink} target="_blank" to={data.link}>
           view-project
         </Link>
@@ -88,7 +88,7 @@ const ProjectCard = ({ data }) => {
 };
 
 export const ProjectDashBoard = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
   const { todos, dispatch } = useContext(reducerContext);
   const { setCompletedTodos } = useContext(todoTitle);
 

@@ -2,7 +2,6 @@ import { Col, Row } from "react-bootstrap";
 import styles from "./contactme.module.css";
 import { useEffect, useState } from "react";
 import solidDown from "../about-screen/img/solidDown.png";
-import closeIcon from "../home-screen/img/closeIcon.png";
 import { contactItems, otherContacts } from "../utils/Data";
 // import emailIcon from "../about-screen/img/mail-icon.png"
 // import phoneIcon from "../about-screen/img/phone-icon.png"
@@ -14,8 +13,8 @@ import { Link } from "react-router-dom";
 // ContactDashboard DASHBOARD
 export const ContactDashboard = () => {
   const [showInfo, setShowInfo] = useState({
-    contact: false,
-    others: false,
+    contact: true,
+    others: true,
   });
   return (
     <Row className={` ${styles.container} `}>
@@ -184,25 +183,14 @@ button.addEventListener('click', () => {
             flex: "1",
             display: "flex",
             flexDirection: "column",
-            // border: "1px solid blue",
           }}
         >
           <div
             className={` ${styles.headerCover} ${styles.ssNoborder} ssNoDisplay`}
-            // style={{ borderBottom: "1px solid #1e2d3d" }}
           >
             <div className={` ${styles.header} ${styles.ssNoborder}`}>
               contacts
             </div>
-            {
-              <div className={`${styles.closeCover}  ${styles.ssNoborder}`}>
-                <img
-                  src={closeIcon}
-                  alt={closeIcon}
-                  //  onClick={handleReset}
-                />
-              </div>
-            }
           </div>
           <div className={styles.contactSectionsContainer}>
             {/* SPLIT 1st SECTION FROM HERE  */}
@@ -219,7 +207,7 @@ button.addEventListener('click', () => {
                       {" "}
                       _name:
                       <input
-                        placeholder="John"
+                        placeholder="enter name"
                         type="text"
                         value={formData.name}
                         onChange={(e) =>
@@ -234,7 +222,7 @@ button.addEventListener('click', () => {
                       {" "}
                       _email:
                       <input
-                        placeholder="john@gmail.com"
+                        placeholder="enter email"
                         type="email"
                         value={formData.email}
                         onChange={(e) =>

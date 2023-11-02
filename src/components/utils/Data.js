@@ -316,17 +316,17 @@ export const profileData = [
     imgTag: reactTag,
     tag: "React, HTML, CSS",
   },
+  // {
+  //   id: 2,
+  //   name: "Care-Pro",
+  //   image: project2,
+  //   description: "Find hospitals close to you. Enter location...",
+  //   link: "https://care-pro.vercel.app",
+  //   imgTag: reactTag,
+  //   tag: "React, HTML, CSS",
+  // },
   {
     id: 2,
-    name: "Care-Pro",
-    image: project2,
-    description: "Find hospitals close to you. Enter location...",
-    link: "https://care-pro.vercel.app",
-    imgTag: reactTag,
-    tag: "React, HTML, CSS",
-  },
-  {
-    id: 3,
     name: "Api Vault",
     image: project3,
     description: "Your Gateway To A World Of Public APIs.",
@@ -334,78 +334,7 @@ export const profileData = [
     imgTag: vueTag,
     tag: "Vue, HTML, CSS",
   },
-  // {
-  //   id: 4,
-  //   name: "Bob Brown",
-  //   image: "bob.jpg",
-  //   description: "Full-stack Developer",
-  // },
-  // {
-  //   id: 5,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 6,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 7,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 9,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 11,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 12,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 13,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
-  // {
-  //   id: 14,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Duis aute irure dolor in velit esse cillum dolore.",
-  // },
-  // {
-  //   id: 15,
-  //   name: "Eva Wilson",
-  //   image: "eva.jpg",
-  //   description: "Product Manager",
-  // },
+  
 ];
 
 export const reducer = (state, action) => {

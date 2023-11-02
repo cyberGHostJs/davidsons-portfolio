@@ -349,10 +349,10 @@ const GameContainer = () => {
         style={{ position: "absolute", bottom: "1%", right: "1%" }}
       />
       <div className="game">
-        <button>start-game</button>
+        <button disabled style={{ cursor: "not-allowed"}}>start-game</button>
       </div>
       <div className="game-params">
-        <button className="skipBtn">skip</button>
+        <button className="skipBtn" disabled style={{ cursor: "not-allowed"}}>skip</button>
         <GameInstruction />
         {/* eslint-disable-next-line  */}
         <p>// food left</p>

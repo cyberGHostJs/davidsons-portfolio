@@ -14,7 +14,7 @@ export const ProjectDashBoardCntent = () => {
 
   const handleReset = useCallback(() => {
     dispatch({ type: "RESET" });
-  },[dispatch])
+  }, [dispatch]);
   return (
     <Row className={` ${styles.container} ${styles.borderLeft}`}>
       <Col
@@ -30,9 +30,9 @@ export const ProjectDashBoardCntent = () => {
           }}
         >
           <div className={` ${styles.headerCover} ${styles.ssNoborder}`}>
-            <div
-              className={`${styles.header} ${styles.ssNoborder}`}
-            >{`${completTodos}`} {completTodos < 1 ? '// projects / all': ''}</div>
+            <div className={`${styles.header} ${styles.ssNoborder}`}>
+              {`${completTodos}`} {completTodos < 1 ? "// projects / all" : ""}
+            </div>
             {completTodos.length > 0 && (
               <div className={`${styles.closeCover}  ${styles.ssNoborder}`}>
                 <img src={closeIcon} alt={closeIcon} onClick={handleReset} />
@@ -64,25 +64,57 @@ export const ProjectDashBoardCntent = () => {
 const ProjectCard = ({ data }) => {
   return (
     <div>
-      <h5 className={styles.projectHead}><span>project {data.id}</span>//_{data.name}</h5>
-    <div className={` ${styles.profileCard}`}>
-      <div className={styles.bgColor}>
-        <div
-          className={`${
-            data.tag.includes("React") ? styles.react : styles.vue
-          }`}
-        >
-          <img src={data.imgTag} alt={data.imgTag} />
+      <h5 className={styles.projectHead}>
+        <span>project {data.id}</span>//_{data.name}
+      </h5>
+      <div className={` ${styles.profileCard}`}>
+        <div className={styles.bgColor}>
+          <div
+            className={`${
+              data.tag.includes("React") ? styles.react : styles.vue
+            }`}
+            style={{ zIndex: 3}}
+          >
+            <img
+              src={data.imgTag}
+              alt={data.imgTag}
+              style={{ objectFit: "contain", zIndex: 2,  }}
+            />
+          </div>
         </div>
+        <div className="" style={{ position: "relative", height: "30vh" }}>
+          <div
+            style={{
+              background: "black",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 1,
+              opacity: 0.5, // optional, for some transparency
+            }}
+          ></div>
+          <img
+            src={data.image}
+            alt={data.name}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "fill",
+              position: "relative",
+              zIndex: 0,
+            }}
+          />
+        </div>
+
+        <p>{data.description}</p>
+        <button className="" style={{ marginBottom: "5%" }}>
+          <Link className={styles.projectLink} target="_blank" to={data.link}>
+            view-project
+          </Link>
+        </button>
       </div>
-      <img src={data.image} alt={data.name} />
-      <p>{data.description}</p>
-      <button className="" style={{ marginBottom: '5%'}}>
-        <Link className={styles.projectLink} target="_blank" to={data.link}>
-          view-project
-        </Link>
-      </button>
-    </div>
     </div>
   );
 };
@@ -141,7 +173,7 @@ export const ProjectDashBoard = () => {
                         styles.navItems
                       }`}
                     >
-                      <img src={todo.imageSrc} alt={todo.imageSrc} />
+                      <img src={todo.imageSrc} alt={todo.imageSrc} style={{}} />
                       {todo.title}
                     </div>
                   </li>

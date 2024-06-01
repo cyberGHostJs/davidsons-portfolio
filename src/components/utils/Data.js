@@ -11,7 +11,8 @@ import instagram from "../about-screen/img/instagram.svg";
 import twitter from "../about-screen/img/twitter-x.svg";
 import linkedinIcon from "../about-screen/img/linkedinIcon.svg";
 import project1 from "../project-screen/img/project1.png";
-import project2 from "../project-screen/img/project2.png";
+import project2 from "../project-screen/img/videoImg.png";
+// import project2 from "../project-screen/img/project2.png";
 import project3 from "../project-screen/img/project3.png";
 import vueTag from "../project-screen/img/vueTag.png";
 import reactTag from "../project-screen/img/reactTag.png";
@@ -33,9 +34,21 @@ export const contactItems = [
   { label: "+2348085176952", img: phoneIcon },
 ];
 export const otherContacts = [
-  { label: "LinkedIn", img: linkedinIcon, link: 'https://www.linkedin.com/in/igweokolo-davidson-onyebuchi-/' },
-  { label: "Twitter-X", img: twitter, link: 'https://twitter.com/ghst79?s=21&t=MGM86TXryQgnjlw9gzKqJA'},
-  { label: "Instagram", img: instagram, link: 'https://www.instagram.com/ghost_dev7/?igshid=NTc4MTIwNjQ2YQ%3D%3D' },
+  {
+    label: "LinkedIn",
+    img: linkedinIcon,
+    link: "https://www.linkedin.com/in/igweokolo-davidson-onyebuchi-/",
+  },
+  {
+    label: "Twitter-X",
+    img: twitter,
+    link: "https://twitter.com/ghst79?s=21&t=MGM86TXryQgnjlw9gzKqJA",
+  },
+  {
+    label: "Instagram",
+    img: instagram,
+    link: "https://www.instagram.com/ghost_dev7/?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+  },
 ];
 
 export const bio = [{ label: "about-me" }];
@@ -50,7 +63,7 @@ export const education = [{ label: "high-school" }, { label: "university" }];
 export const aboutMessageData = `/**
 About me
 Experienced Frontend Developer
-2 Years of Proven Expertise
+3 Years of Proven Expertise
 Mobile-First Advocate
 HTML, CSS, JavaScript Specialist
 Proficient in:
@@ -305,10 +318,34 @@ export const menuOptions = [
     imageSrc: htmlLogo,
     complete: false,
   },
+  {
+    id: 6,
+    title: "Next.js",
+    imageSrc: reactLogo,
+    complete: false,
+  },
 ];
 export const profileData = [
   {
     id: 1,
+    name: "Api Vault",
+    image: project3,
+    description: "Your Gateway To A World Of Public APIs.",
+    link: "https://apivault.dev/",
+    imgTag: vueTag,
+    tag: "Vue, HTML, CSS",
+  },
+  {
+    id: 2,
+    name: "Creo",
+    image: project2,
+    description: "Jumpstart your tech career with Creo",
+    link: "https://creo-fe-iota.vercel.app/sign-up",
+    imgTag: reactTag,
+    tag: "React, HTML, Next.js, Tailwind",
+  },
+  {
+    id: 3,
     name: "MovFlix",
     image: project1,
     description: "Browse movies and add them to your watchlist.",
@@ -325,16 +362,6 @@ export const profileData = [
   //   imgTag: reactTag,
   //   tag: "React, HTML, CSS",
   // },
-  {
-    id: 2,
-    name: "Api Vault",
-    image: project3,
-    description: "Your Gateway To A World Of Public APIs.",
-    link: "https://apivault.dev/",
-    imgTag: vueTag,
-    tag: "Vue, HTML, CSS",
-  },
-  
 ];
 
 export const reducer = (state, action) => {

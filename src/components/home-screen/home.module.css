@@ -115,6 +115,9 @@
 .marginTopLi {
   margin-top: 7vh;
 }
+.fixed {
+  position: fixed;
+}
 @media screen and (max-width: 949px) {
   .bottomNav {
     display: none;

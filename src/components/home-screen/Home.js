@@ -37,11 +37,13 @@ function Home() {
                       className={`${styles.ssMenu} ${
                         show ? styles["slide-in"] : styles["slide-out"]
                       }`}
+                      style={{ zIndex: 10, height: "100vh", position: "fixed"}}
                     >
                       <SmallScreenMenu />
                     </div>
                   }
-                  <Col md="12" className={`${styles.topNav} `}>
+                  {/* ${show ? styles.fixed : ""} */}
+                  <Col md="12" className={`${styles.topNav}`} style={{ zIndex: 6, }}>
                     <TopNavigation />
                   </Col>
                   <Col md="12" className={styles.body}>

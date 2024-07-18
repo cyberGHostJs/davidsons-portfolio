@@ -69,7 +69,7 @@ const ProjectCard = ({ data }) => {
       </h5>
       <div className={` ${styles.profileCard}`}>
         <div className={styles.bgColor}>
-          <div
+          {/* <div
             className={`${
               data.tag.includes("React") ? styles.react : styles.vue
             }`}
@@ -80,7 +80,7 @@ const ProjectCard = ({ data }) => {
               alt={data.imgTag}
               style={{ objectFit: "contain", zIndex: 2,  }}
             />
-          </div>
+          </div> */}
         </div>
         <div className="" style={{ position: "relative", height: "30vh" }}>
           <div

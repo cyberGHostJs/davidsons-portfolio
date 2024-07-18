@@ -12,6 +12,7 @@ import twitter from "../about-screen/img/twitter-x.svg";
 import linkedinIcon from "../about-screen/img/linkedinIcon.svg";
 import project1 from "../project-screen/img/project1.png";
 import project2 from "../project-screen/img/videoImg.png";
+import lazones from "../project-screen/img/lazones.jpg";
 // import project2 from "../project-screen/img/project2.png";
 import project3 from "../project-screen/img/project3.png";
 import vueTag from "../project-screen/img/vueTag.png";
@@ -346,6 +347,15 @@ export const profileData = [
   },
   {
     id: 3,
+    name: "La'zones",
+    image: lazones,
+    description: "Innovative solution for modern business.",
+    link: "https://lazones-group.vercel.app/",
+    imgTag: reactTag,
+    tag: "Next.js, Tailwind",
+  },
+  {
+    id: 4,
     name: "MovFlix",
     image: project1,
     description: "Browse movies and add them to your watchlist.",
